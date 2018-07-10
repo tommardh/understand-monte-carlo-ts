@@ -1,10 +1,10 @@
 console.log("Testing");
 
 function greeter(person: string) {
-    return "<p>Hello, kallades <b>" + person + "</b></p>";
+    return "<h3>Typescript Header</h3><p>Hello, flytta på <b>" + person + "</b></p>";
 }
 
-let user = "Tompa User";
+let user = "Tompa";
 
 let element = document.getElementById("content");
 
