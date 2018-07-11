@@ -1,20 +1,39 @@
 {
   "name": "typescript-test-setup",
   "version": "1.0.0",
+  "private": true,
   "description": "My test setup of a typescript project",
   "main": "app.js",
   "scripts": {
-    "test": "we are live!",
+    "test": "jest",
+    "test:w": "jest --watch",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "lite": "lite-server",
-    "start": "concurrently \"npm run tsc:w\" \"npm run lite\" "
+    "start": "concurrently \"npm run tsc:w\" \"npm run lite\" \"npm run test:w\""
   },
   "author": "Tom Mårdh",
   "license": "MIT",
   "devDependencies": {
+    "@types/jest": "^23.1.5",
     "concurrently": "^3.6.0",
+    "jest": "^23.4.0",
     "lite-server": "^2.4.0",
+    "ts-jest": "^23.0.0",
     "typescript": "^2.9.2"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   }
 }

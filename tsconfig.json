@@ -60,8 +60,8 @@
 
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "es2016",
+    //"module": "commonjs",
+    "target": "es6",
 //    "noImplicitAny": true,
 //    "strictNullChecks": true,
 //    "moduleResolution": "node",
