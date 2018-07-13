@@ -10,6 +10,7 @@
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "lite": "lite-server",
+    "lint": "./node_modules/.bin/tslint -c tslint.json 'src/**/*.{ts,tsx}'",
     "start": "concurrently \"npm run tsc:w\" \"npm run lite\" \"npm run test:w\""
   },
   "author": "Tom Mårdh",
@@ -20,6 +21,7 @@
     "jest": "^23.4.0",
     "lite-server": "^2.4.0",
     "ts-jest": "^23.0.0",
+    "tslint": "^5.10.0",
     "typescript": "^2.9.2"
   },
   "jest": {

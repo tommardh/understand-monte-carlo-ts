@@ -62,10 +62,11 @@
   "compilerOptions": {
     //"module": "commonjs",
     "target": "es6",
+    "strict": true,
 //    "noImplicitAny": true,
 //    "strictNullChecks": true,
 //    "moduleResolution": "node",
-//    "sourceMap": true,
+    "sourceMap": true,
     "outDir": "dist"
     //    "baseUrl": ".",
 //    "paths": {
@@ -77,7 +78,7 @@
 
 },
   "include": [
-    "src/**/*"
+    "./src/**/*.ts"
   ]
 
 }
