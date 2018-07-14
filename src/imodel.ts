@@ -1,0 +1,3 @@
+interface IModel {
+    counter?: number;
+}

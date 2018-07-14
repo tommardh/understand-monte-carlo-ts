@@ -1,7 +1,11 @@
 export class Model {
-    public data = {};
+    public data: IModel;
 
-    public constructor(data: object) {
+    constructor(data: IModel) {
         this.data = data;
+    }
+
+    public present(data: IModel, render: (o: IModel) => string): string {
+        return render(data);
     }
 }
