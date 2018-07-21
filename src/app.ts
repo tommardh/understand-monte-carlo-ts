@@ -1,18 +1,19 @@
 import { greeter } from "./greeter.js";
-// https://stackoverflow.com/questions/44979976/
-// typescript-compiler-is-forgetting-to-add-file-extensions-to-es6-module-imports
-
-// console.log(greeter);
-
-// function greeter(person: string) {
-//     return "<h3>Typescript Header</h3><p>Hello, flytta på <b>" + person + "</b></p>";
-// }
+import { View } from "./view.js";
+import { Model } from "./model.js";
 
 const user = "Tom";
+const data = { counter: 0 };
+const model = new Model(data);
+const view = new View();
+view.display(view.init(model.data));
+// view.display(greeter(user));
 
-const element = document.getElementById("content");
-
-if (element) {
- element.innerHTML = greeter(user);
+function increase() {
+    console.log("Increase");
 }
-// document.body.innerHTML = greeter(user);
+
+// window.increase = increase;
+const _global = window  as any;
+
+_global.increase = increase;

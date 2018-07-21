@@ -14,9 +14,6 @@ describe("model", () => {
         const input = {};
         const expectedOutput = { data: {} };
         const output = new Model(input);
-        // console.log("-----------------------------");
-        // console.log(model);
-        // console.log("-----------------------------");
         expect(output).toEqual(expectedOutput);
     });
 
@@ -25,9 +22,6 @@ describe("model", () => {
         const expectedOutput = { counter: 0 };
         const model = new Model(input);
         const output = model.data;
-        // console.log("-----------------------------");
-        // console.log(model);
-        // console.log("-----------------------------");
         expect(output).toEqual(expectedOutput);
     });
 
@@ -36,9 +30,6 @@ describe("model", () => {
         const expectedOutput = "<h3>Counting Down</h3><p>Counter: <b>5</b></p>";
         const model = new Model(input);
         const output = model.present(model.data, render);
-        // console.log("-----------------------------");
-        // console.log(model);
-        // console.log("-----------------------------");
         expect(output).toEqual(expectedOutput);
     });
 
