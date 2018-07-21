@@ -15,7 +15,7 @@ export class View {
 
     public ready(model: IModel) {
         return "<h1>Counter Test</h1>\n" +
-               "<p>counter: " + model.counter + "</p>\n" + 
-               "<button type=\"button\" onClick=\"increase()\">Increase</button>"; 
+               "<p>counter: " + model.counter + "</p>\n" +
+               "<button type=\"button\" onClick=\"increase()\">Increase</button>";
     }
 }

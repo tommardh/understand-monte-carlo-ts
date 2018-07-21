@@ -3,10 +3,10 @@ import { View } from "./../view";
 function expectedView(counter: number) {
     return (
         "<h1>Counter Test</h1>\n" +
-        "<p>counter: " + counter + "</p>\n" + 
+        "<p>counter: " + counter + "</p>\n" +
         "<button type=\"button\" onClick=\"increase()\">Increase</button>"
     );
-};
+}
 
 describe("view", () => {
     it("should be possible to display a view", () => {
