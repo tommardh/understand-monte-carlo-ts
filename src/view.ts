@@ -16,6 +16,10 @@ export class View {
     public ready(model: IModel) {
         return "<h1>Counter Test</h1>\n" +
                "<p>counter: " + model.counter + "</p>\n" +
-               "<button type=\"button\" onClick=\"increase()\">Increase</button>";
+               "<button type=\"button\" onClick=\"" +
+               "send({subject: 'increase', action: 'click', data: {counter: " +
+               model.counter +
+               "}})" +
+               "\">Increase</button>";
     }
 }
