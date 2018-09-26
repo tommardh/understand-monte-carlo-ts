@@ -4,11 +4,11 @@ import { View } from "./view";
 export class State {
 
     public view: View;
-    // public action: Action;
+    public action!: Action;
 
     constructor(view: View) { // } action: Action) {
         this.view = view;
-        // this.action = action;
+        // this.action = 
     }
 
     public render(data: IModel) {
@@ -26,12 +26,16 @@ export class State {
         if (this.ready(data)) {
             representation = this.view.ready(data);
         }
-        console.log(representation);
+        // console.log(representation);
 
         this.view.display(representation) ;
     }
 
     private nextAction(data: IModel) {
+        if (data.counter === 10) {
+            let prop: IProposal = { counter: data.counter };
+            this.action.generate(prop, 1);
+        }
     }
 
 }

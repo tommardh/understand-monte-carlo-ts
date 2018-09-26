@@ -11,9 +11,37 @@ export class Model {
     }
 
     // public present(data: IModel, render: (o: IModel) => string): string {
-    public present(data: IModel) {
-        console.log(data);
-        this.render(data);
+    public present(data: IProposal) {
+        if (data.counter !== undefined) {
+            this.data.counter = data.counter;
+        }
+        if (data.remainingStories) {
+            this.data.remainingStories = data.remainingStories;
+        }
+        if (data.simulations) {
+            if (data.simulations.length === 0) {
+                this.data.simulations = [];
+            } else {
+                this.data.simulations = this.data.simulations.concat(data.simulations); // push(data.simulations[0]);
+            }
+        }
+        
+        if (data.nextSimulation) {
+            this.data.nextSimulation = data.nextSimulation;
+        }
+        if (this.needRender(data)) {
+            this.render(this.data);
+        }
+    }
+
+    private needRender(model: IProposal) {
+        let sum:number
+        if (model.nextSimulation) {
+            sum = model.nextSimulation.reduce((a, b) => a + b, 0);
+        } else {
+            sum = 0;
+        }
+        return sum === 0; // && !model.remainingStories;
     }
 
     public render(data: IModel) {

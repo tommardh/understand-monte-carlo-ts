@@ -1,0 +1,3 @@
+interface ISimulation {
+    data: number[];
+}

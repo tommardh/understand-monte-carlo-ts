@@ -1,3 +1,8 @@
 interface IModel {
-    counter?: number;
+    counter: number;
+    remainingStories: number;
+    activeField: string;
+    nextSimulation: number[];
+    historicalCapacity: number[];
+    simulations: number[][];
 }
