@@ -45,4 +45,4 @@ define(["require", "exports"], function (require, exports) {
     }
     exports.Model = Model;
 });
-//# sourceMappingURL=Model.js.map
+//# sourceMappingURL=model.js.map
