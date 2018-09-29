@@ -1,0 +1,7 @@
+h1 {
+    text-transform: uppercase;
+}
+
+td, th, .stories {
+  border: solid 1px white;
+}
