@@ -63,7 +63,7 @@ export class View {
     private drawForm(count: number, remainingStories: number, data: number[], field: string) {
       let output: string;
       let name: string;
-      output = "<h2>Creaste Simulation Data</h2>" +
+      output = "<h2>Create Simulation Data</h2>" +
                 "<p><b>Remaining Stories: </b><input type=\"text\" name=\"stories\" value=\""  +
                   remainingStories +
                   "\" class=\"w3-squeed-black w3-border-white w3-center\" style=\"display: inline-block\" onchange=\"" +
