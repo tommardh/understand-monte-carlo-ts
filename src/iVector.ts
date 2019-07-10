@@ -1,3 +1,3 @@
 interface IVector {
-    [key: number]: number
+    [key: number]: number;
 }

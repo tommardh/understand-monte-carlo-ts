@@ -25,7 +25,7 @@ export class Model {
                 this.data.simulations = this.data.simulations.concat(data.simulations); // push(data.simulations[0]);
             }
         }
-        
+
         if (data.nextSimulation) {
             this.data.nextSimulation = data.nextSimulation;
         }
@@ -34,17 +34,17 @@ export class Model {
         }
     }
 
+    public render(data: IModel) {
+        this.state.render(data);
+    }
+
     private needRender(model: IProposal) {
-        let sum:number
+        let sum: number;
         if (model.nextSimulation) {
             sum = model.nextSimulation.reduce((a, b) => a + b, 0);
         } else {
             sum = 0;
         }
         return sum === 0; // && !model.remainingStories;
-    }
-
-    public render(data: IModel) {
-        this.state.render(data);
     }
 }

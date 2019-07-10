@@ -8,7 +8,7 @@ export class State {
 
     constructor(view: View) { // } action: Action) {
         this.view = view;
-        // this.action = 
+        // this.action =
     }
 
     public render(data: IModel) {
@@ -33,7 +33,7 @@ export class State {
 
     private nextAction(data: IModel) {
         if (data.counter === 10) {
-            let prop: IProposal = { counter: data.counter };
+            const prop: IProposal = { counter: data.counter };
             this.action.generate(prop, 1);
         }
     }

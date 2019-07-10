@@ -13,12 +13,12 @@ export class Action {
         // present = present ? present : this.model.present;
         const proposal: IProposal = data || {};
         // proposal.counter = proposal.counter || 0;
-        
+
         proposal.simulations = [];
         proposal.nextSimulation = [0, 0, 0, 0, 0, 0];
         proposal.remainingStories = 100;
         this.present(proposal);
-        return false;
+        return false; //
     }
 
     public generate(data: IProposal, nrSamples: number) {
@@ -26,7 +26,7 @@ export class Action {
         // present = present ? present : this.model.present;
         const proposal: IProposal = data || {};
         // proposal.counter = proposal.counter || 0;
-        if (proposal.counter !== undefined) { 
+        if (proposal.counter !== undefined) {
             proposal.counter += nrSamples;
         }
         proposal.simulations = this.createSimulations(nrSamples);
@@ -45,7 +45,7 @@ export class Action {
 
     public editSimulation(subject: string, data: IProposal) {
         const proposal: IProposal = data || {};
-        const index = Number(subject.charAt(subject.length-1)) - 1;
+        const index = Number(subject.charAt(subject.length - 1)) - 1;
         proposal.nextSimulation = this.model.data.nextSimulation;
         proposal.nextSimulation[index] = Number(data.text);
         this.present(proposal);
@@ -60,15 +60,14 @@ export class Action {
         return false;
     }
 
-
     private createSimulations(nrSamples: number) {
-        let result: number[][] = [];
+        const result: number[][] = [];
 
         for (let row = 0; row < nrSamples; row++) {
             result.push([0, 0, 0, 0, 0, 0]);
-        for (let i = 0; i < 6 ; i++) {
-            result[row][i] = this.model.data.historicalCapacity[Math.floor(Math.random()*6)];
-        }
+            for (let i = 0; i < 6 ; i++) {
+                result[row][i] = this.model.data.historicalCapacity[Math.floor(Math.random() * 6)];
+            }
         }
         return result;
     }

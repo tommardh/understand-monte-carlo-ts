@@ -1,4 +1,4 @@
 interface IChartAxis {
-    x?: IAxis,
-    y?: IAxis
+    x?: IAxis;
+    y?: IAxis;
 }

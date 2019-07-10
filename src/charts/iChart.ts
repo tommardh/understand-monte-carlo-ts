@@ -12,7 +12,7 @@ interface IChart {
 //                 name: "data",
 //                 values: [1,1,1]
 //             },{
-//                 name: "x", 
+//                 name: "x",
 //                 values: [11, 12, 13]
 //             }
 //         ]
@@ -26,7 +26,6 @@ interface IChart {
 //           }
 //      }
 // }
-
 
 /*
       const barChartData: IChart = {

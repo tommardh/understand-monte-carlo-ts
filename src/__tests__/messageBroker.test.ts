@@ -4,11 +4,11 @@ import { Model } from "./../model";
 import { State } from "./../state";
 import { View } from "./../view";
 
-const data = { counter: 0, 
-               remainingStories: 100, 
+const data = { counter: 0,
+               remainingStories: 100,
                activeField: "field01",
-               nextSimulation: [0, 0, 0, 0, 0, 0], 
-               historicalCapacity: [5,7,5,8,12,10], 
+               nextSimulation: [0, 0, 0, 0, 0, 0],
+               historicalCapacity: [5, 7, 5, 8, 12, 10],
                simulations: [] };
 
 const view = new View();
@@ -30,7 +30,7 @@ describe("Message Broker", () => {
         const expectedOutput = true;
         const output = new MessageBroker(action);
         expect(output).toBeDefined();
-    })
+    });
 
     it.skip("should be able to send a valid message", () => {
         const input = deepcopy(message);
@@ -38,5 +38,5 @@ describe("Message Broker", () => {
         const messageBroker = new MessageBroker(action);
         const output = messageBroker.send(message);
         // expect(output).;
-    })
-})
+    });
+});

@@ -5,7 +5,7 @@ export function barChart(chart: IChart) {
     const height = 1080;
     let margin = 0; // 200; // 0;
     let svgChart: string;
-    if (Axis.hasAxis(chart)) { 
+    if (Axis.hasAxis(chart)) {
         margin = 200;
     }
     const theme = getTheme(chart);
@@ -25,10 +25,10 @@ export function barChart(chart: IChart) {
 
 function generateSVGHeader(width: number, height: number) {
     let header: string;
-    header = "<svg" + 
+    header = "<svg" +
         " width=\"100%\"" +
         " perserveAspectRatio=\"xMidYMid\"" +
-        " viewbox=\"0 0 " + width + " " + height +        
+        " viewbox=\"0 0 " + width + " " + height +
         "\">";
     return header;
 }
@@ -36,7 +36,7 @@ function generateSVGHeader(width: number, height: number) {
 function generateBars(width: number, height: number, margin: number, chart: IChart, theme: ITheme) {
     const data = getData(chart); // chart.data.columns[0].values;
     const padding = getBarPadding(chart); // 20; // width * 0.05;
-    const columnWidth = (width - margin * 2)/ data.length; 
+    const columnWidth = (width - margin * 2) / data.length;
     const barWidth = Math.floor((1 - padding) * columnWidth);
     const spaceWidth = padding * columnWidth;
     const max = Math.max(...data);
@@ -50,7 +50,7 @@ function generateBars(width: number, height: number, margin: number, chart: ICha
     let output = "";
     let x: number;
     let y: number;
-    for (let i=0; i<data.length; i++) {
+    for (let i = 0; i < data.length; i++) {
         barHeight = Math.floor(data[i] * barHeightFactor);
         x = Math.floor(margin + spaceWidth / 2 + i * columnWidth);
         y = height - margin - barHeight;
@@ -77,45 +77,45 @@ function getData(chart: IChart) {
         if (Axis.isXAxisTypeContinuous(chart)) {
             data = addMissingYValues(chart);
         } else {
-          const xlabel = chart.data.x;
-          const index = chart.data.columns.findIndex((column: IColumn) => column.name !== xlabel)
-          data = chart.data.columns[index].values;
+            const xlabel = chart.data.x;
+            const index = chart.data.columns.findIndex((column: IColumn) => column.name !== xlabel);
+            data = chart.data.columns[index].values;
         }
     } else {
-      data = chart.data.columns[0].values;
+        data = chart.data.columns[0].values;
     }
     // console.log(data);
     return data;
   }
 
 function addMissingYValues(chart: IChart) {
-    let data: number[] = [];
+    const data: number[] = [];
     const xlabel = chart.data.x;
     const labelIndex = chart.data.columns.findIndex((column: IColumn) => column.name === xlabel);
     const labelData = chart.data.columns[labelIndex].values;
-    const YIndex = chart.data.columns.findIndex((column: IColumn) => column.name !== xlabel)
+    const YIndex = chart.data.columns.findIndex((column: IColumn) => column.name !== xlabel);
     const YValues = chart.data.columns[YIndex].values;
 
     const min = Math.min(...labelData);
     const max = Math.max(...labelData);
     let index: number;
 
-    for (let i = min; i<= max; i++) {
+    for (let i = min; i <= max; i++) {
         index = labelData.indexOf(i);
-      if (index === -1) {
-        data.push(0);
-      } else {
-          data.push(YValues[index]);
-      }
+        if (index === -1) {
+            data.push(0);
+        } else {
+            data.push(YValues[index]);
+        }
     }
     return data;
-  }
+}
 
 function getTheme(chart: IChart) {
-    let themeName = "light"
+    let themeName = "light";
     let theme: ITheme;
     if (chart.data.theme) {
-        themeName = chart.data.theme;   
+        themeName = chart.data.theme;
     }
     if (themeName === "light") {
         theme = { stroke: "black", fill: "blue" };
@@ -124,6 +124,3 @@ function getTheme(chart: IChart) {
     }
     return theme;
 }
- 
-
-
