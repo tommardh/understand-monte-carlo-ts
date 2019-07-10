@@ -65,7 +65,7 @@
     "strict": true,
 //    "noImplicitAny": true,
 //    "strictNullChecks": true,
-//    "moduleResolution": "node",
+    "moduleResolution": "node",
     "esModuleInterop": true,
     "sourceMap": true,
     "outDir": "dist"
