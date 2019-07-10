@@ -16,12 +16,12 @@
   "author": "Tom Mårdh",
   "license": "MIT",
   "devDependencies": {
-    "@types/jest": "^23.1.5",
-    "concurrently": "^3.6.0",
-    "jest": "^23.4.0",
-    "lite-server": "^2.4.0",
-    "ts-jest": "^23.0.0",
-    "tslint": "^5.10.0",
+    "@types/jest": "^23.3.14",
+    "concurrently": "^3.6.1",
+    "jest": "^23.6.0",
+    "lite-server": "^2.5.3",
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.18.0",
     "typescript": "^2.9.2"
   },
   "jest": {
