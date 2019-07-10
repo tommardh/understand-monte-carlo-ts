@@ -66,9 +66,10 @@
 //    "noImplicitAny": true,
 //    "strictNullChecks": true,
 //    "moduleResolution": "node",
+    "esModuleInterop": true,
     "sourceMap": true,
     "outDir": "dist"
-    //    "baseUrl": ".",
+//    "baseUrl": ".",
 //    "paths": {
 //      "*": [
 //        "node_modules/*"
