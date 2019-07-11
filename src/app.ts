@@ -3,12 +3,15 @@ import { Model } from "./model.js";
 import { State } from "./state.js";
 import { View } from "./view.js";
 
-const data = { counter: 0,
-               remainingStories: 100,
-               activeField: "field01",
-               nextSimulation: [0, 0, 0, 0, 0, 0],
-               historicalCapacity: [5, 7, 5, 8, 12, 10],
-               simulations: [] };
+const data = {
+    counter: 0,
+    remainingStories: 100,
+    activeField: "field01",
+    showDescriptions: false,
+    nextSimulation: [0, 0, 0, 0, 0, 0],
+    historicalCapacity: [5, 7, 5, 8, 12, 10],
+    simulations: [],
+};
 
 const view = new View();
 const state = new State(view); // , action);
@@ -20,6 +23,7 @@ state.action = action;
 view.display(view.init(model.data));
 
 function send(message: IMessage) {
+    console.log(action);
     console.table(message);
     if (message.subject) {
     if (message.subject === "reset") {

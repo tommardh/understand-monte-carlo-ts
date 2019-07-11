@@ -7,6 +7,7 @@ import { View } from "./../view";
 const data = { counter: 0,
                remainingStories: 100,
                activeField: "field01",
+               showDescriptions: false,
                nextSimulation: [0, 0, 0, 0, 0, 0],
                historicalCapacity: [5, 7, 5, 8, 12, 10],
                simulations: [] };

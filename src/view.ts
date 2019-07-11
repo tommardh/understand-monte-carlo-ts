@@ -1,4 +1,5 @@
 import { barChart } from "./charts/charts";
+import { repeatElements, generateButton } from "./templateUtils";
 
 export class View {
 
@@ -16,167 +17,186 @@ export class View {
     public ready(model: IModel) {
         console.log("model: -----------------------");
         console.log(JSON.stringify(model));
-        return this.drawHeader() +
-               this.drawHistory(model.historicalCapacity) +
-               // this.drawSamples(model.counter) +
-               this.drawForm(model.counter, model.remainingStories, model.nextSimulation, model.activeField) +
-               // this.drawChart(model) +
-               this.drawData(model) +
-               this.drawFooter();
+        return `
+${this.drawHeader()}
+${model.showDescriptions ? this.drawDescription() : ""}
+${this.drawHistory(model.historicalCapacity)}
+${this.drawForm(model.counter, model.remainingStories, model.nextSimulation, model.activeField)}
+${this.drawData(model)}
+${this.drawFooter()}`;
     }
 
     private drawHeader() {
-        // return "<h1>Monte Carlo Simulation</h1>";
-        return "<div class=\"w3-display-container\">" +
-             "<img src=\"montecarlo.jpg\" class=\"w3-image\">" +
-             // <!-- div class="w3-display-topleft w3-container w3-text-orange w3-xxlarge"
-             // tyle="text-shadow:1px 1px 0 #000"><p><b>MONTE CARLO SIMULATION</b></p></div -->
-             "<h1 class=\"w3-display-topleft w3-container w3-text-squeed-orange\" " +
-             "style=\"text-shadow:1px 1px 0 #000\">" +
-             "<b>MONTE CARLO SIMULATION</b></h1>" +
-             "</div>";
+        return `
+            <div class="w3-display-container">
+                <img src="montecarlo.jpg" class="w3-image">
+                    <h1
+                        class="w3-display-topleft w3-container w3-text-squeed-orange"
+                        style="text-shadow:1px 1px 0 #000">
+                        <b>MONTE CARLO SIMULATION</b>
+                    </h1>
+             </div>`;
+    }
+
+    private drawDescription() {
+        return `
+            <p>
+                The purpose of this application is to build understanding of how <b>Monte Carlo Simulation</b>
+                works. To accomplish this a short description of the method and a short introduction to the
+                scenario used in the application follows.
+            </p>
+            <p>
+                <b>Monte Carlo Simulation</b> is a statistical method that we use, in this context, to make a
+                forecast of how many more iterations we need to be able to close the remaning stories in our scope,
+                based upon how much we have delivered in the past. The forecast is built from a large number of
+                samples generated as combinations of velocities from our previous iterations.
+            </p>
+            <p>
+                <b>Exercise Introduction</b> - The table below shows the velocity of the teams for the last 6 iterations
+                and we have 100 stories remaning. When can they be delivered?
+                We use 6 iterations because a die have 6 sides.
+                In real life it may be sufficient with data from three or four iterations.
+            </p>
+            <ol>
+                <li>Role 6 dice (one for each column in the <i>Create Simulation Data</i> section)</li>
+                <li>
+                    For each die write the velocity that corresponds to number on the die (e.g.
+                    Die with number 2 yields a velocity of 7)
+                </li>
+                <li>Press <i>Add</i> when all 6 numbers are entered.
+            </ol>
+            <p>
+                Continue as long as it makes sense and then you can use the
+                <i>Generate</i> buttons to get more samples faster.
+            </p>
+            <p>
+                Data calculated will be shown as a chart and in a table. In the table you can follow the calculations.
+                The last sample is in the top of the table. For each sample the average velocity is calculated and this
+                is used to get the remaining number of iterations to close the remaining stories
+                (100 / average velocity).
+            </p>`;
     }
 
     private drawHistory(data: number[]) {
-      let output: string;
-      output = "<h2>Througput the Last 6 Iterations</h2>" +
-               "<table class=\"w3-table w3-centered\">" +
-               "<thead>" +
-               "<tr class=\"w3-squeed-orange w3-text-squeed-black\">";
-      for (let i = 1; i <= data.length; i++) {
-        output += "<th>Iteration " + i + "</th>";
-      }
-      output += "</tr>" +
-                "</thead>" +
-                "<tbody>" +
-                "<tr class=\"w3-squeed-black\">";
-      data.forEach((item: number) => {
-          output += "<td>" + item + "</td>";
-      });
-      output += "</tr>" +
-                "</tbody>" +
-                "</table>";
-
-      return output;
+        return `
+            <h2>Througput the Last 6 Iterations</h2>
+            <p>The table below shows the velocity of the team for the last 6 iterations</p>
+            <table class="w3-table w3-centered">
+                <thead>
+                    <tr class="w3-squeed-orange w3-text-squeed-black">
+                        ${data.reduce<string>((accumulator: string, currentValue: number, currentIndex: number) => {
+                            return `${accumulator}\n<th>Iteration ${currentIndex + 1}</th>`;
+                        }, "")}
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="w3-squeed-black">
+                        ${data.reduce<string>((accumulator: string, currentValue: number) => {
+                            return `${accumulator}\n<td>${currentValue}</td>`;
+                        }, "")}
+                    </tr>
+                </tbody>
+            </table>`;
     }
 
     private drawForm(count: number, remainingStories: number, data: number[], field: string) {
-      let output: string;
-      let name: string;
-      output = "<h2>Create Simulation Data</h2>" +
-                "<p><b>Remaining Stories: </b><input type=\"text\" name=\"stories\" value=\""  +
-                  remainingStories +
-                  "\" class=\"w3-squeed-black w3-border-white w3-center\" style=\"display: inline-block\" onchange=\"" +
-                  "send({subject: 'stories', action: 'edit', data: {text: this.value" +
-              "}})\"";
-      output += "></p>" +
-               "<table class=\"w3-table w3-centered\">" +
-               "<thead>" +
-               "<tr class=\"w3-squeed-orange w3-text-squeed-black w3-center\">";
-      for (let i = 1; i <= 6; i++) {
-          output += "<th>Iteration " + i + "</th>";
-      }
-      output += "</tr>" +
-                "</thead>" +
-                "<tbody>" +
-                "<tr class=\"w3-squeed-black\">";
-      for (let i = 1; i <= 6; i++) {
-          name = "field0" + i;
-          output += "<td><input type=\"text\" name=\"" + name + "\" value=\"";
-          if (data[i - 1] === 0) {
-              output += "";
-          } else {
-              output += data[i - 1];
-          }
-          output += "\" class=\"w3-squeed-black w3-border-squeed-black w3-center\" size=\"4\" " +
-              "style=\"display: inline-block\" onchange=\"" +
-              "send({subject: 'field0" + i + "', action: 'edit', data: {text: this.value" +
-              "}})\"";
-          if (field === name) {
-              output += " autofocus";
-          }
-          output += "></td>";
-      }
-      output += "</tr>" +
-            "</tbody>  " +
-            "</table>" +
-            "<br/>" +
-            "<div class=\"w3-row\">" +
-            // "<div class = \"w3-bar w3-squeed-black\">" +
-            // "<div class=\"w3-third\">&nbsp</div>" +
-            "<button class=\"w3-button w3-ripple w3-white w3-col\" style=\"width:22%\" onclick=\"" +
-            "send({subject: 'add', action: 'click', data: {counter: " +
-            count +
-            "}})" +
-            "\">Add</button>" +
-            "<div class=\"w3-col\"style=\"width:4%\">&nbsp</div>" +
-
-            "<button class=\"w3-button w3-ripple w3-white w3-col\" style=\"width:22%\" onClick=\"" +
-            "send({subject: 'generate', action: 'click', data: {counter: " +
-            count +
-            "}})" +
-            "\">Generate</button>" +
-           "<div class=\"w3-col\"style=\"width:4%\">&nbsp</div>" +
-            "<button class=\"w3-button w3-ripple w3-white w3-col\" style=\"width:22%\" onClick=\"" +
-            "send({subject: 'generate100', action: 'click', data: {counter: " +
-            count +
-            "}})" +
-            "\">Generate 100</button>" +
-           "<div class=\"w3-col\"style=\"width:4%\">&nbsp</div>" +
-            "<button class=\"w3-button w3-ripple w3-white w3-col\" style=\"width:22%\" onClick=\"" +
-            "send({subject: 'reset', action: 'click', data: {counter: " +
-            0 +
-            "}})" +
-            "\">Reset</button>" +
-            "</div>";
-      return output;
+        return `
+            <h2>Create Simulation Data</h2>
+                <p>
+                    <b>Remaining Stories: </b>
+                    <input
+                        type="text"
+                        name="stories"
+                        value="${remainingStories}"
+                        class="w3-squeed-black w3-border-white w3-center"
+                        style="display: inline-block"
+                        onchange="send({subject: 'stories', action: 'edit', data: {text: this.value}})">
+                </p>
+                <table class="w3-table w3-centered">
+                    <thead>
+                        <tr class="w3-squeed-orange w3-text-squeed-black w3-center">
+                            ${repeatElements("th", [1, 2, 3, 4, 5, 6], "Iteration ")}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="w3-squeed-black">
+                            ${data.reduce<string>((accumulator: string, currentValue: number, currentIndex: number) => {
+                                return `${accumulator}
+                                    <td>
+                                        <input
+                                            type="text"
+                                            name="field0${currentValue}"
+                                            value="${data[currentIndex] === 0 ? "" : data[currentIndex]}"
+                                            class="w3-squeed-black w3-border-squeed-black w3-center"
+                                            size="4"
+                                            style="display: inline-block"
+                                            onchange="send({
+                                                subject: 'field0${currentIndex + 1}',
+                                                action: 'edit',
+                                                data: {text: this.value}
+                                            })"
+                                            ${field === "field0" + (currentIndex + 1) ? "autofocus>" : ">"}
+                                    </td>`;
+                            }, "")}
+                        </tr>
+                    </tbody>
+                </table>
+                <br/>
+                <div class="w3-row">
+                    ${generateButton("Add", "add", count)}
+                    <div class="w3-col" style="width:4%">&nbsp</div>
+                    ${generateButton("Generate", "generate", count)}
+                    <div class="w3-col" style="width:4%">&nbsp</div>
+                    ${generateButton("Generate 100", "generate100", count)}
+                    <div class="w3-col" style="width:4%">&nbsp</div>
+                    ${generateButton("Reset", "reset", count)}
+                </div>`;
     }
 
     private drawData(model: IModel) {
-      const data = model.simulations; // :number[][],
-      const remainingItems = model.remainingStories; // : number) {
-      let output: string = "";
-      let average: number;
-      let remainingIterations: number;
-      if (data.length > 0) {
-        output = "<h2>Simulation Data</h2>" +
-                 // "<p><b>Samples:</b> " + data.length + "</p>" +
-                 this.drawChart(model) +
-                 "<table class=\"w3-table w3-centered\">" +
-                 "<thead>" +
-                 "<tr class=\"w3-squeed-orange w3-text-squeed-black\">" +
-                 "<th>Sample</th>";
-        for (let i = 1; i <= data[0].length; i++) {
-          output += "<th>Iteration " + i + "</th>";
+        const data = model.simulations; // :number[][],
+        const remainingItems = model.remainingStories; // : number) {
+        let output: string = "";
+        if (data.length > 0) {
+            output = `
+                <h2>Simulation Data</h2>
+                ${this.drawChart(model)}
+                <table class="w3-table w3-centered">
+                    <thead>
+                        <tr class="w3-squeed-orange w3-text-squeed-black">
+                            <th>Sample</th>
+                            ${repeatElements("th", data[0], "Iteration ", true)}
+                            <th>Average</th>
+                            <th>Remaining Iterations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        ${data.reduceRight<string>((
+                            accumulator: string,
+                            currentValue: number[],
+                            currentIndex: number,
+                        ) => {
+                            const sum = currentValue.reduce((a, b) => (a + b), 0);
+                            const average = Math.floor(sum / currentValue.length);
+                            const remainingIterations = Math.floor(remainingItems / average);
+
+                            return `${accumulator}
+                                <tr class="w3-squeed-black">
+                                    <td>${currentIndex + 1}</td>
+                                    ${repeatElements("td", currentValue)}
+                                    <td>${average}</td>
+                                    <td>${remainingIterations}</td>
+                                </tr>`;
+                        }, "")}
+          </tbody>
+          </table>`;
         }
-        output += "<th>Average</th>" +
-                  "<th>Remaining Iterations</th>" +
-                  "</tr>" +
-                  "</thead>" +
-                  "<tbody>";
-        // for(let row=0; row < data.length; row++) {
-        for (let row = data.length - 1; row >= 0; row--) {
-            output += "<tr class=\"w3-squeed-black\">" +
-                "<td>" + (row + 1) + "</td>";
-            average = 0;
-            for (const item of data[row]) {
-                output += "<td>" + item + "</td>";
-                average += item;
-            }
-            average = average / data[row].length;
-            remainingIterations = remainingItems / average;
-            output += "<td>" + Math.floor(average) + "</td>" +
-              "<td>" + Math.floor(remainingIterations) + "</td>" +
-              "</tr>";
-        }
-        output += "</tbody>" +
-            "</table>";
-      }
-      return output;
+        return output;
     }
 
     private drawFooter() {
-        return "<br /><img src=\"squeed_4c_neg.gif\" width=\"100\">";
+      return `<br /><img src="squeed_4c_neg.gif" width="100">`;
     }
 
     private drawChart(model: IModel) {
@@ -225,6 +245,7 @@ export class View {
                 barChartData.data.columns[1].values.push(vector[key]);
             }
         }
+        console.log("Bar Chart Data");
         console.log(JSON.stringify((barChartData)));
 
         // barChartData.data.columns[1].values[0] = model.counter;

@@ -30,11 +30,12 @@ export class Model {
             this.data.nextSimulation = data.nextSimulation;
         }
         if (this.needRender(data)) {
+            console.log('call render');
             this.render(this.data);
         }
     }
 
-    public render(data: IModel) {
+    private render(data: IModel) {
         this.state.render(data);
     }
 

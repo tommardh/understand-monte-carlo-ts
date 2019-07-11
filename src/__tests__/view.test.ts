@@ -9,7 +9,7 @@ function expectedView(counter: number) {
 }
 
 describe("view", () => {
-    it("should be possible to display a view", () => {
+    it.skip("should be possible to display a view", () => {
 // Do not know how to test this
 
 //        const input = "<h1>Test av vy</h1>";
@@ -27,7 +27,7 @@ describe("view", () => {
 //        expect(output).toEqual(expectedOutput);
     });
 
-    it ("should be possible to render the ready view", () => {
+    it.skip ("should be possible to render the ready view", () => {
 //        const input = { counter: 5 };
 //        const expectedOutput = expectedView(input.counter);
 //        const view = new View();
@@ -36,10 +36,19 @@ describe("view", () => {
     });
 
     it("should be possible to get a initial rendering of the model", () => {
-//        const input = { counter: 5 };
-//        const expectedOutput = expectedView(input.counter);
-//        const view = new View();
-//        const output = view.init(input);
-//        expect(output).toEqual(expectedOutput);
+
+        const given:IModel = {
+            counter: 0,
+            remainingStories: 100,
+            activeField: "field01",
+            showDescriptions: false,
+            nextSimulation: [0, 0, 0, 0, 0, 0],
+            historicalCapacity: [5, 7, 5, 8, 12, 10],
+            simulations: [],
+        };
+
+        const view = new View();
+        const output = view.ready(given);
+        expect(output).toMatchSnapshot();
     });
 });
