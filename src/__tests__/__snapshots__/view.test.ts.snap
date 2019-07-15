@@ -11,7 +11,318 @@ exports[`view should be possible to get a initial rendering of the model 1`] = `
                         <b>MONTE CARLO SIMULATION</b>
                     </h1>
              </div>
+<div class=\\"w3-display-container w3-row\\">
+<button
+    class=\\"w3-button w3-ripple w3-white w3-col\\"
+    style=\\"width:22%\\"
+    onclick=\\"send({
+      subject: 'showDescriptions',
+      action: 'click',
+      data: {counter: 0}
+    })\\">
+    Show descriptions
+</button>
 
+</div>
+
+
+            <h2>Througput the Last 6 Iterations</h2>
+            
+            <table class=\\"w3-table w3-centered\\">
+                <thead>
+                    <tr class=\\"w3-squeed-orange w3-text-squeed-black\\">
+                        
+                                <th>
+                                    <img
+                                        src=\\"die1.svg\\"
+                                        height=\\"24px\\"
+                                        width=\\"24px\\" />
+                                    Iteration 1
+                                </th>
+                                <th>
+                                    <img
+                                        src=\\"die2.svg\\"
+                                        height=\\"24px\\"
+                                        width=\\"24px\\" />
+                                    Iteration 2
+                                </th>
+                                <th>
+                                    <img
+                                        src=\\"die3.svg\\"
+                                        height=\\"24px\\"
+                                        width=\\"24px\\" />
+                                    Iteration 3
+                                </th>
+                                <th>
+                                    <img
+                                        src=\\"die4.svg\\"
+                                        height=\\"24px\\"
+                                        width=\\"24px\\" />
+                                    Iteration 4
+                                </th>
+                                <th>
+                                    <img
+                                        src=\\"die5.svg\\"
+                                        height=\\"24px\\"
+                                        width=\\"24px\\" />
+                                    Iteration 5
+                                </th>
+                                <th>
+                                    <img
+                                        src=\\"die6.svg\\"
+                                        height=\\"24px\\"
+                                        width=\\"24px\\" />
+                                    Iteration 6
+                                </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class=\\"w3-squeed-black\\">
+                        
+<td>5</td>
+<td>7</td>
+<td>5</td>
+<td>8</td>
+<td>12</td>
+<td>10</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Create Simulation Data</h2>
+                <p>
+                    <b>Remaining Stories: </b>
+                    <input
+                        type=\\"text\\"
+                        name=\\"stories\\"
+                        value=\\"100\\"
+                        class=\\"w3-squeed-black w3-border-white w3-center\\"
+                        style=\\"display: inline-block\\"
+                        onchange=\\"send({subject: 'stories', action: 'edit', data: {text: this.value}})\\">
+                </p>
+                <table class=\\"w3-table w3-centered\\">
+                    <thead>
+                        <tr class=\\"w3-squeed-orange w3-text-squeed-black w3-center\\">
+                            <th>Iteration 1</th>
+<th>Iteration 2</th>
+<th>Iteration 3</th>
+<th>Iteration 4</th>
+<th>Iteration 5</th>
+<th>Iteration 6</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class=\\"w3-squeed-black\\">
+                            
+                                    <td>
+                                        <input
+                                            type=\\"text\\"
+                                            name=\\"field00\\"
+                                            value=\\"\\"
+                                            class=\\"w3-squeed-black w3-border-squeed-black w3-center\\"
+                                            size=\\"4\\"
+                                            style=\\"display: inline-block\\"
+                                            onchange=\\"send({
+                                                subject: 'field01',
+                                                action: 'edit',
+                                                data: {text: this.value}
+                                            })\\"
+                                            autofocus>
+                                    </td>
+                                    <td>
+                                        <input
+                                            type=\\"text\\"
+                                            name=\\"field00\\"
+                                            value=\\"\\"
+                                            class=\\"w3-squeed-black w3-border-squeed-black w3-center\\"
+                                            size=\\"4\\"
+                                            style=\\"display: inline-block\\"
+                                            onchange=\\"send({
+                                                subject: 'field02',
+                                                action: 'edit',
+                                                data: {text: this.value}
+                                            })\\"
+                                            >
+                                    </td>
+                                    <td>
+                                        <input
+                                            type=\\"text\\"
+                                            name=\\"field00\\"
+                                            value=\\"\\"
+                                            class=\\"w3-squeed-black w3-border-squeed-black w3-center\\"
+                                            size=\\"4\\"
+                                            style=\\"display: inline-block\\"
+                                            onchange=\\"send({
+                                                subject: 'field03',
+                                                action: 'edit',
+                                                data: {text: this.value}
+                                            })\\"
+                                            >
+                                    </td>
+                                    <td>
+                                        <input
+                                            type=\\"text\\"
+                                            name=\\"field00\\"
+                                            value=\\"\\"
+                                            class=\\"w3-squeed-black w3-border-squeed-black w3-center\\"
+                                            size=\\"4\\"
+                                            style=\\"display: inline-block\\"
+                                            onchange=\\"send({
+                                                subject: 'field04',
+                                                action: 'edit',
+                                                data: {text: this.value}
+                                            })\\"
+                                            >
+                                    </td>
+                                    <td>
+                                        <input
+                                            type=\\"text\\"
+                                            name=\\"field00\\"
+                                            value=\\"\\"
+                                            class=\\"w3-squeed-black w3-border-squeed-black w3-center\\"
+                                            size=\\"4\\"
+                                            style=\\"display: inline-block\\"
+                                            onchange=\\"send({
+                                                subject: 'field05',
+                                                action: 'edit',
+                                                data: {text: this.value}
+                                            })\\"
+                                            >
+                                    </td>
+                                    <td>
+                                        <input
+                                            type=\\"text\\"
+                                            name=\\"field00\\"
+                                            value=\\"\\"
+                                            class=\\"w3-squeed-black w3-border-squeed-black w3-center\\"
+                                            size=\\"4\\"
+                                            style=\\"display: inline-block\\"
+                                            onchange=\\"send({
+                                                subject: 'field06',
+                                                action: 'edit',
+                                                data: {text: this.value}
+                                            })\\"
+                                            >
+                                    </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br/>
+                <div class=\\"w3-row\\">
+                    <button
+    class=\\"w3-button w3-ripple w3-white w3-col\\"
+    style=\\"width:22%\\"
+    onclick=\\"send({
+      subject: 'add',
+      action: 'click',
+      data: {counter: 0}
+    })\\">
+    Add
+</button>
+
+                    <div class=\\"w3-col\\" style=\\"width:4%\\">&nbsp</div>
+                    <button
+    class=\\"w3-button w3-ripple w3-white w3-col\\"
+    style=\\"width:22%\\"
+    onclick=\\"send({
+      subject: 'generate',
+      action: 'click',
+      data: {counter: 0}
+    })\\">
+    Generate
+</button>
+
+                    <div class=\\"w3-col\\" style=\\"width:4%\\">&nbsp</div>
+                    <button
+    class=\\"w3-button w3-ripple w3-white w3-col\\"
+    style=\\"width:22%\\"
+    onclick=\\"send({
+      subject: 'generate100',
+      action: 'click',
+      data: {counter: 0}
+    })\\">
+    Generate 100
+</button>
+
+                    <div class=\\"w3-col\\" style=\\"width:4%\\">&nbsp</div>
+                    <button
+    class=\\"w3-button w3-ripple w3-white w3-col\\"
+    style=\\"width:22%\\"
+    onclick=\\"send({
+      subject: 'reset',
+      action: 'click',
+      data: {counter: 0}
+    })\\">
+    Reset
+</button>
+
+                </div>
+
+<br /><img src=\\"squeed_4c_neg.gif\\" width=\\"100\\">"
+`;
+
+exports[`view should be possible to get a view with descriptions 1`] = `
+"
+
+            <div class=\\"w3-display-container\\">
+                <img src=\\"montecarlo.jpg\\" class=\\"w3-image\\">
+                    <h1
+                        class=\\"w3-display-topleft w3-container w3-text-squeed-orange\\"
+                        style=\\"text-shadow:1px 1px 0 #000\\">
+                        <b>MONTE CARLO SIMULATION</b>
+                    </h1>
+             </div>
+<div class=\\"w3-display-container w3-row\\">
+<button
+    class=\\"w3-button w3-ripple w3-white w3-col\\"
+    style=\\"width:22%\\"
+    onclick=\\"send({
+      subject: 'showDescriptions',
+      action: 'click',
+      data: {counter: 0}
+    })\\">
+    Show descriptions
+</button>
+
+</div>
+
+            <h2>Introduction</h2>
+            <p>
+                The purpose of this application is to build understanding of how <b>Monte Carlo Simulation</b>
+                works. To accomplish this a short description of the method and a short introduction to the
+                scenario used in the application follows.
+            </p>
+            <p>
+                <b>Monte Carlo Simulation</b> is a statistical method that we use, in this context, to make a
+                forecast of how many more iterations we need to be able to close the remaning stories in our scope,
+                based upon how much we have delivered in the past. The forecast is built from a large number of
+                samples generated as combinations of velocities from our previous iterations.
+            </p>
+            <p>
+                <b>Exercise Introduction</b> - The table below shows the velocity of the teams for the last 6 iterations
+                and we have 100 stories remaning. When can they be delivered?
+                We use 6 iterations because a die have 6 sides.
+                In real life it may be sufficient with data from three or four iterations.
+            </p>
+            <ol>
+                <li>Role 6 dice (one for each column in the <i>Create Simulation Data</i> section)</li>
+                <li>
+                    For each die write the velocity that corresponds to number on the die (e.g.
+                    Die with number 2 yields a velocity of 7)
+                </li>
+                <li>Press <i>Add</i> when all 6 numbers are entered.
+            </ol>
+            <p>
+                Continue as long as it makes sense and then you can use the
+                <i>Generate</i> buttons to get more samples faster.
+            </p>
+            <p>
+                Data calculated will be shown as a chart and in a table. In the table you can follow the calculations.
+                The last sample is in the top of the table. For each sample the average velocity is calculated and this
+                is used to get the remaining number of iterations to close the remaining stories
+                (100 / average velocity).
+            </p>
 
             <h2>Througput the Last 6 Iterations</h2>
             <p>The table below shows the velocity of the team for the last 6 iterations</p>
@@ -19,12 +330,48 @@ exports[`view should be possible to get a initial rendering of the model 1`] = `
                 <thead>
                     <tr class=\\"w3-squeed-orange w3-text-squeed-black\\">
                         
-<th>Iteration 1</th>
-<th>Iteration 2</th>
-<th>Iteration 3</th>
-<th>Iteration 4</th>
-<th>Iteration 5</th>
-<th>Iteration 6</th>
+                                <th>
+                                    <img
+                                        src=\\"die1.svg\\"
+                                        height=\\"24px\\"
+                                        width=\\"24px\\" />
+                                    Iteration 1
+                                </th>
+                                <th>
+                                    <img
+                                        src=\\"die2.svg\\"
+                                        height=\\"24px\\"
+                                        width=\\"24px\\" />
+                                    Iteration 2
+                                </th>
+                                <th>
+                                    <img
+                                        src=\\"die3.svg\\"
+                                        height=\\"24px\\"
+                                        width=\\"24px\\" />
+                                    Iteration 3
+                                </th>
+                                <th>
+                                    <img
+                                        src=\\"die4.svg\\"
+                                        height=\\"24px\\"
+                                        width=\\"24px\\" />
+                                    Iteration 4
+                                </th>
+                                <th>
+                                    <img
+                                        src=\\"die5.svg\\"
+                                        height=\\"24px\\"
+                                        width=\\"24px\\" />
+                                    Iteration 5
+                                </th>
+                                <th>
+                                    <img
+                                        src=\\"die6.svg\\"
+                                        height=\\"24px\\"
+                                        width=\\"24px\\" />
+                                    Iteration 6
+                                </th>
                     </tr>
                 </thead>
                 <tbody>

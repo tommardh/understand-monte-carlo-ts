@@ -8,12 +8,16 @@ export class Action {
         this.model = model;
     }
 
-    public reset(data: IProposal) {
-    // public increase(data: IModel, present?: (o: IModel) => string) {
-        // present = present ? present : this.model.present;
+    public showDescriptionsClick(data: IProposal) {
         const proposal: IProposal = data || {};
-        // proposal.counter = proposal.counter || 0;
+        proposal.counter = this.model.data.counter;
+        proposal.showDescriptions = !this.model.data.showDescriptions;
+        this.present(proposal);
+        return false;
+    }
 
+    public reset(data: IProposal) {
+        const proposal: IProposal = data || {};
         proposal.simulations = [];
         proposal.nextSimulation = [0, 0, 0, 0, 0, 0];
         proposal.remainingStories = 100;
@@ -22,10 +26,7 @@ export class Action {
     }
 
     public generate(data: IProposal, nrSamples: number) {
-    // public increase(data: IModel, present?: (o: IModel) => string) {
-        // present = present ? present : this.model.present;
         const proposal: IProposal = data || {};
-        // proposal.counter = proposal.counter || 0;
         if (proposal.counter !== undefined) {
             proposal.counter += nrSamples;
         }

@@ -1,5 +1,5 @@
 import { barChart } from "./charts/charts";
-import { repeatElements, generateButton } from "./templateUtils";
+import { generateButton, repeatElements } from "./templateUtils";
 
 export class View {
 
@@ -19,8 +19,11 @@ export class View {
         console.log(JSON.stringify(model));
         return `
 ${this.drawHeader()}
+<div class="w3-display-container w3-row">
+${generateButton("Show descriptions", "showDescriptions", model.counter)}
+</div>
 ${model.showDescriptions ? this.drawDescription() : ""}
-${this.drawHistory(model.historicalCapacity)}
+${this.drawHistory(model.historicalCapacity, model.showDescriptions)}
 ${this.drawForm(model.counter, model.remainingStories, model.nextSimulation, model.activeField)}
 ${this.drawData(model)}
 ${this.drawFooter()}`;
@@ -40,6 +43,7 @@ ${this.drawFooter()}`;
 
     private drawDescription() {
         return `
+            <h2>Introduction</h2>
             <p>
                 The purpose of this application is to build understanding of how <b>Monte Carlo Simulation</b>
                 works. To accomplish this a short description of the method and a short introduction to the
@@ -77,15 +81,22 @@ ${this.drawFooter()}`;
             </p>`;
     }
 
-    private drawHistory(data: number[]) {
+    private drawHistory(data: number[], showDescriptions: boolean) {
         return `
             <h2>Througput the Last 6 Iterations</h2>
-            <p>The table below shows the velocity of the team for the last 6 iterations</p>
+            ${showDescriptions ? `<p>The table below shows the velocity of the team for the last 6 iterations</p>` : ""}
             <table class="w3-table w3-centered">
                 <thead>
                     <tr class="w3-squeed-orange w3-text-squeed-black">
                         ${data.reduce<string>((accumulator: string, currentValue: number, currentIndex: number) => {
-                            return `${accumulator}\n<th>Iteration ${currentIndex + 1}</th>`;
+                            return `${accumulator}
+                                <th>
+                                    <img
+                                        src="die${currentIndex + 1}.svg"
+                                        height="24px"
+                                        width="24px" />
+                                    Iteration ${currentIndex + 1}
+                                </th>`;
                         }, "")}
                     </tr>
                 </thead>
@@ -206,7 +217,7 @@ ${this.drawFooter()}`;
     }
 
     private calculateVectors(model: IModel) {
-      const vector: IVector = {}; // {[key: number]: number} = {};
+      const vector: IVector = {};
       let sum: number;
       let average: number;
       let remaining: number;
@@ -216,7 +227,6 @@ ${this.drawFooter()}`;
           remaining = Math.floor(model.remainingStories / average);
           if (vector[remaining] === undefined) {
               vector[remaining] = 0;
-              // vector[sum].push(0);
           }
           vector[remaining]++;
       });
@@ -247,8 +257,6 @@ ${this.drawFooter()}`;
         }
         console.log("Bar Chart Data");
         console.log(JSON.stringify((barChartData)));
-
-        // barChartData.data.columns[1].values[0] = model.counter;
         return barChartData;
     }
 }
