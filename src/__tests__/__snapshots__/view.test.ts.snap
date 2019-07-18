@@ -124,7 +124,7 @@ exports[`view should be possible to get a initial rendering of the model 1`] = `
                 width=\\"24px\\" />
         </button>
         5
-        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\">
+        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\" style=\\"left:0\\">
             <button
     class=\\"w3-button\\"
     onclick=\\"send({
@@ -217,7 +217,7 @@ exports[`view should be possible to get a initial rendering of the model 1`] = `
                 width=\\"24px\\" />
         </button>
         5
-        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\">
+        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\" style=\\"left:0\\">
             <button
     class=\\"w3-button\\"
     onclick=\\"send({
@@ -310,7 +310,7 @@ exports[`view should be possible to get a initial rendering of the model 1`] = `
                 width=\\"24px\\" />
         </button>
         5
-        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\">
+        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\" style=\\"left:0\\">
             <button
     class=\\"w3-button\\"
     onclick=\\"send({
@@ -403,7 +403,7 @@ exports[`view should be possible to get a initial rendering of the model 1`] = `
                 width=\\"24px\\" />
         </button>
         5
-        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\">
+        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\" style=\\"left:0\\">
             <button
     class=\\"w3-button\\"
     onclick=\\"send({
@@ -496,7 +496,7 @@ exports[`view should be possible to get a initial rendering of the model 1`] = `
                 width=\\"24px\\" />
         </button>
         5
-        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\">
+        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\" style=\\"left:0\\">
             <button
     class=\\"w3-button\\"
     onclick=\\"send({
@@ -589,7 +589,7 @@ exports[`view should be possible to get a initial rendering of the model 1`] = `
                 width=\\"24px\\" />
         </button>
         5
-        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\">
+        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\" style=\\"right:0\\">
             <button
     class=\\"w3-button\\"
     onclick=\\"send({
@@ -890,7 +890,7 @@ exports[`view should be possible to get a view with descriptions 1`] = `
                 width=\\"24px\\" />
         </button>
         5
-        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\">
+        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\" style=\\"left:0\\">
             <button
     class=\\"w3-button\\"
     onclick=\\"send({
@@ -983,7 +983,7 @@ exports[`view should be possible to get a view with descriptions 1`] = `
                 width=\\"24px\\" />
         </button>
         5
-        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\">
+        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\" style=\\"left:0\\">
             <button
     class=\\"w3-button\\"
     onclick=\\"send({
@@ -1076,7 +1076,7 @@ exports[`view should be possible to get a view with descriptions 1`] = `
                 width=\\"24px\\" />
         </button>
         5
-        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\">
+        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\" style=\\"left:0\\">
             <button
     class=\\"w3-button\\"
     onclick=\\"send({
@@ -1169,7 +1169,7 @@ exports[`view should be possible to get a view with descriptions 1`] = `
                 width=\\"24px\\" />
         </button>
         5
-        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\">
+        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\" style=\\"left:0\\">
             <button
     class=\\"w3-button\\"
     onclick=\\"send({
@@ -1262,7 +1262,7 @@ exports[`view should be possible to get a view with descriptions 1`] = `
                 width=\\"24px\\" />
         </button>
         5
-        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\">
+        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\" style=\\"left:0\\">
             <button
     class=\\"w3-button\\"
     onclick=\\"send({
@@ -1355,7 +1355,7 @@ exports[`view should be possible to get a view with descriptions 1`] = `
                 width=\\"24px\\" />
         </button>
         5
-        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\">
+        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\" style=\\"right:0\\">
             <button
     class=\\"w3-button\\"
     onclick=\\"send({

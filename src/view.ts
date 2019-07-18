@@ -150,6 +150,7 @@ ${this.drawFooter()}`;
                                             "field0" + (currentIndex + 1),
                                             currentValue,
                                             historicalCapacity,
+                                            currentIndex === data.length - 1 ? "right" : "left",
                                         )}
                                     </td>`;
                             }, "")}

@@ -6,4 +6,5 @@ interface IModel {
     nextSimulation: number[];
     historicalCapacity: number[];
     simulations: number[][];
+    calculatedData: number[][];
 }
