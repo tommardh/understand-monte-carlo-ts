@@ -1,5 +1,5 @@
 import { barChart } from "./charts/charts";
-import { generateButton, repeatElements } from "./templateUtils";
+import { generateButton, generateDiceDropdown, repeatElements } from "./templateUtils";
 
 export class View {
 
@@ -24,7 +24,13 @@ ${generateButton("Show descriptions", "showDescriptions", model.counter)}
 </div>
 ${model.showDescriptions ? this.drawDescription() : ""}
 ${this.drawHistory(model.historicalCapacity, model.showDescriptions)}
-${this.drawForm(model.counter, model.remainingStories, model.nextSimulation, model.activeField)}
+${this.drawForm(
+    model.counter,
+    model.remainingStories,
+    model.nextSimulation,
+    model.historicalCapacity,
+    model.activeField,
+)}
 ${this.drawData(model)}
 ${this.drawFooter()}`;
     }
@@ -110,7 +116,13 @@ ${this.drawFooter()}`;
             </table>`;
     }
 
-    private drawForm(count: number, remainingStories: number, data: number[], field: string) {
+    private drawForm(
+        count: number,
+        remainingStories: number,
+        data: number[],
+        historicalCapacity: number[],
+        field: string,
+    ) {
         return `
             <h2>Create Simulation Data</h2>
                 <p>
@@ -121,7 +133,7 @@ ${this.drawFooter()}`;
                         value="${remainingStories}"
                         class="w3-squeed-black w3-border-white w3-center"
                         style="display: inline-block"
-                        onchange="send({subject: 'stories', action: 'edit', data: {text: this.value}})">
+                        onchange="send({subject: 'stories', action: 'edit', data: this.value})">
                 </p>
                 <table class="w3-table w3-centered">
                     <thead>
@@ -134,19 +146,11 @@ ${this.drawFooter()}`;
                             ${data.reduce<string>((accumulator: string, currentValue: number, currentIndex: number) => {
                                 return `${accumulator}
                                     <td>
-                                        <input
-                                            type="text"
-                                            name="field0${currentValue}"
-                                            value="${data[currentIndex] === 0 ? "" : data[currentIndex]}"
-                                            class="w3-squeed-black w3-border-squeed-black w3-center"
-                                            size="4"
-                                            style="display: inline-block"
-                                            onchange="send({
-                                                subject: 'field0${currentIndex + 1}',
-                                                action: 'edit',
-                                                data: {text: this.value}
-                                            })"
-                                            ${field === "field0" + (currentIndex + 1) ? "autofocus>" : ">"}
+                                        ${generateDiceDropdown(
+                                            "field0" + (currentIndex + 1),
+                                            currentValue,
+                                            historicalCapacity,
+                                        )}
                                     </td>`;
                             }, "")}
                         </tr>
@@ -160,12 +164,12 @@ ${this.drawFooter()}`;
                     <div class="w3-col" style="width:4%">&nbsp</div>
                     ${generateButton("Generate 100", "generate100", count)}
                     <div class="w3-col" style="width:4%">&nbsp</div>
-                    ${generateButton("Reset", "reset", count)}
+                    ${generateButton("Reset", "reset")}
                 </div>`;
     }
 
     private drawData(model: IModel) {
-        const data = model.simulations; // :number[][],
+        const data = model.calculatedData; // model.simulations; // :number[][],
         const remainingItems = model.remainingStories; // : number) {
         let output: string = "";
         if (data.length > 0) {
@@ -189,14 +193,14 @@ ${this.drawFooter()}`;
                             currentIndex: number,
                         ) => {
                             const sum = currentValue.reduce((a, b) => (a + b), 0);
-                            const average = Math.floor(sum / currentValue.length);
+                            const average = sum / currentValue.length;
                             const remainingIterations = Math.floor(remainingItems / average);
 
                             return `${accumulator}
                                 <tr class="w3-squeed-black">
                                     <td>${currentIndex + 1}</td>
                                     ${repeatElements("td", currentValue)}
-                                    <td>${average}</td>
+                                    <td>${Math.floor(average * 10) / 10}</td>
                                     <td>${remainingIterations}</td>
                                 </tr>`;
                         }, "")}
@@ -221,7 +225,7 @@ ${this.drawFooter()}`;
       let sum: number;
       let average: number;
       let remaining: number;
-      model.simulations.forEach((simulation) => {
+      model.calculatedData.forEach((simulation) => {
           sum = simulation.reduce((a, b) => a + b, 0);
           average = sum / model.historicalCapacity.length;
           remaining = Math.floor(model.remainingStories / average);

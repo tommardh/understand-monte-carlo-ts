@@ -33,8 +33,10 @@ export class State {
 
     private nextAction(data: IModel) {
         if (data.counter === 10) {
-            const prop: IProposal = { counter: data.counter };
-            this.action.generate(prop, 1);
+            if (data.nextSimulation.reduce((a, b) => (a + b), 0) === 0 ) {
+                this.action.generate(1);
+                this.action.addManualSimulation();
+            }
         }
     }
 

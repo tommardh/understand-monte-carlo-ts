@@ -11,6 +11,7 @@ const data = {
     nextSimulation: [0, 0, 0, 0, 0, 0],
     historicalCapacity: [5, 7, 5, 8, 12, 10],
     simulations: [],
+    calculatedData: [],
 };
 
 const view = new View();
@@ -28,26 +29,24 @@ function send(message: IMessage) {
     if (message.subject) {
         if (message.subject === "reset") {
             if (message.action === "click") {
-                if (message.data) {
-                    action.reset(message.data);
-                }
+                action.reset();
             }
         } else if (message.subject === "generate") {
             if (message.action === "click") {
                 if (message.data) {
-                    action.generate(message.data, 1);
+                    action.generate(1);
                 }
             }
         } else if (message.subject === "generate100") {
             if (message.action === "click") {
                 if (message.data) {
-                    action.generate(message.data, 100);
+                    action.generate(100);
                 }
             }
         } else if (message.subject === "add") {
             if (message.action === "click") {
                 if (message.data) {
-                    action.addManualSimulation(message.data);
+                    action.addManualSimulation();
                 }
             }
         } else if (message.subject.startsWith("field")) {
@@ -65,7 +64,7 @@ function send(message: IMessage) {
         } else if (message.subject === "showDescriptions") {
             if (message.action === "click") {
                 if (message.data) {
-                    action.showDescriptionsClick(message.data);
+                    action.showDescriptionsClick();
                 }
             }
         }

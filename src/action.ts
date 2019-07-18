@@ -8,55 +8,88 @@ export class Action {
         this.model = model;
     }
 
-    public showDescriptionsClick(data: IProposal) {
-        const proposal: IProposal = data || {};
-        proposal.counter = this.model.data.counter;
+    public showDescriptionsClick() {
+        const proposal: IProposal = {};
         proposal.showDescriptions = !this.model.data.showDescriptions;
         this.present(proposal);
         return false;
     }
 
-    public reset(data: IProposal) {
-        const proposal: IProposal = data || {};
-        proposal.simulations = [];
-        proposal.nextSimulation = [0, 0, 0, 0, 0, 0];
+    public reset() {
+        const proposal: IProposal = {};
+        proposal.counter = 0;
         proposal.remainingStories = 100;
-        this.present(proposal);
-        return false; //
-    }
-
-    public generate(data: IProposal, nrSamples: number) {
-        const proposal: IProposal = data || {};
-        if (proposal.counter !== undefined) {
-            proposal.counter += nrSamples;
-        }
-        proposal.simulations = this.createSimulations(nrSamples);
-        this.present(proposal);
-        return false;
-    }
-
-    public addManualSimulation(data: IProposal) {
-        const proposal: IProposal = data || {};
-        proposal.counter = this.model.data.counter + 1;
-        proposal.simulations = [this.model.data.nextSimulation];
+        // proposal.activeField =
+        // proposal.showDescriptions =
         proposal.nextSimulation = [0, 0, 0, 0, 0, 0];
+        // proposal.historicalCapacity =
+        proposal.simulations = [];
+        proposal.calculatedData = [],
         this.present(proposal);
         return false;
     }
 
-    public editSimulation(subject: string, data: IProposal) {
-        const proposal: IProposal = data || {};
+    public generate(nrSamples: number) {
+        const proposal: IProposal = {}; // = data || {};
+        const newSimulations = this.createSimulations(nrSamples);
+        if (nrSamples > 1) {
+            proposal.counter = this.model.data.counter + nrSamples;
+            // proposal.activeField =
+            // proposal.showDescriptions =
+            // proposal.nextSimulation = [0, 0, 0, 0, 0, 0];
+            proposal.simulations = newSimulations;
+            proposal.calculatedData = newSimulations.map((simulation: number[]) => {
+                return simulation.map((value: number) => this.model.data.historicalCapacity[value]);
+            });
+        } else {
+            // proposal.counter = this.model.data.counter + nrSamples;
+            // proposal.activeField =
+            // proposal.showDescriptions =
+            proposal.nextSimulation = newSimulations[0];
+            // proposal.simulations = newSimulations;
+            // proposal.calculatedData = newSimulations.map((simulation: number[]) => {
+            //     return simulation.map((value: number) => this.model.data.historicalCapacity[value]);
+            // });
+        }
+        this.present(proposal);
+        return false;
+    }
+
+    public addManualSimulation() {
+        const proposal: IProposal = {}; // data || {};
+        proposal.counter = this.model.data.counter + 1;
+        // proposal.activeField =
+        // proposal.showDescriptions =
+        proposal.nextSimulation = [0, 0, 0, 0, 0, 0];
+        proposal.simulations = [this.model.data.nextSimulation];
+        proposal.calculatedData = [
+            this.model.data.nextSimulation.map((value: number) => this.model.data.historicalCapacity[value]),
+        ];
+        this.present(proposal);
+        return false;
+    }
+
+    public editSimulation(subject: string, data: string) {
+        const proposal: IProposal = {}; // data || {};
         const index = Number(subject.charAt(subject.length - 1)) - 1;
+        // proposal.counter =
         proposal.nextSimulation = this.model.data.nextSimulation;
-        proposal.nextSimulation[index] = Number(data.text);
+        proposal.nextSimulation[index] = Number(data);
+        // proposal.activeField
         this.present(proposal);
         return false;
     }
 
-    public editStories(data: IProposal) {
-        const proposal: IProposal = data || {};
-        proposal.remainingStories = Number(data.text);
+    public editStories(data: string) {
+        const proposal: IProposal = {}; // data || {};
+        // proposal.counter =
+        proposal.remainingStories = Number(data);
         proposal.activeField = "field01";
+        // proposal.showDescriptions =
+        // proposal.nextSimulation =
+        // proposal.historicalCapacity =
+        // proposal.simulations =
+        // proposal.calculatedData =
         this.present(proposal);
         return false;
     }
@@ -67,7 +100,8 @@ export class Action {
         for (let row = 0; row < nrSamples; row++) {
             result.push([0, 0, 0, 0, 0, 0]);
             for (let i = 0; i < 6 ; i++) {
-                result[row][i] = this.model.data.historicalCapacity[Math.floor(Math.random() * 6)];
+                result[row][i] = Math.floor(Math.random() * 6);
+                // this.model.data.historicalCapacity[Math.floor(Math.random() * 6)];
             }
         }
         return result;

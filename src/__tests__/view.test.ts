@@ -19,6 +19,7 @@ describe("view", () => {
             nextSimulation: [0, 0, 0, 0, 0, 0],
             historicalCapacity: [5, 7, 5, 8, 12, 10],
             simulations: [],
+            calculatedData: [],
         };
         const view = new View();
         const output = view.ready(given);
@@ -34,6 +35,7 @@ describe("view", () => {
             nextSimulation: [0, 0, 0, 0, 0, 0],
             historicalCapacity: [5, 7, 5, 8, 12, 10],
             simulations: [],
+            calculatedData: [],
         };
         const view = new View();
         const output = view.ready(given);

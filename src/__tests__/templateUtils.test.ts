@@ -1,4 +1,4 @@
-import { repeatElements, generateButton } from "./../templateUtils";
+import { generateButton, repeatElements } from "./../templateUtils";
 
 describe("Template Utils", () => {
     describe("repeatElements", () => {
@@ -42,9 +42,9 @@ describe("Template Utils", () => {
             expect(result).toBe(expectedResult);
         });
     });
-    describe("gererateButton", () => {
+    describe("generateButton", () => {
         it("should return a button with a given label", () => {
-            const givenSubject = "test"
+            const givenSubject = "test";
             const givenLabel = "Test";
             const givenCount = 5;
             const expectedResult = `<button
@@ -53,7 +53,7 @@ describe("Template Utils", () => {
     onclick="send({
       subject: 'test',
       action: 'click',
-      data: {counter: 5}
+      data: '5'
     })">
     Test
 </button>

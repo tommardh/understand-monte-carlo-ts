@@ -28,6 +28,14 @@ export class Model {
             }
         }
 
+        if (data.calculatedData) {
+            if (data.calculatedData.length === 0) {
+                this.data.calculatedData = [];
+            } else {
+                this.data.calculatedData = this.data.calculatedData.concat(data.calculatedData);
+            }
+        }
+
         if (data.nextSimulation) {
             this.data.nextSimulation = data.nextSimulation;
         }
@@ -42,12 +50,13 @@ export class Model {
     }
 
     private needRender(model: IProposal) {
-        let sum: number;
-        if (model.nextSimulation) {
-            sum = model.nextSimulation.reduce((a, b) => a + b, 0);
-        } else {
-            sum = 0;
-        }
-        return sum === 0;
+        // let sum: number;
+        return true;
+        // if (model !== undefined && model.nextSimulation !== undefined) {
+        //     sum = model.nextSimulation.reduce((a, b) => a + b, 0);
+        // } else {
+        //     sum = 0;
+        // }
+        // return sum === 0;
     }
 }

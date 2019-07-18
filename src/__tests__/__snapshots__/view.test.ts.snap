@@ -18,7 +18,7 @@ exports[`view should be possible to get a initial rendering of the model 1`] = `
     onclick=\\"send({
       subject: 'showDescriptions',
       action: 'click',
-      data: {counter: 0}
+      data: '0'
     })\\">
     Show descriptions
 </button>
@@ -98,7 +98,7 @@ exports[`view should be possible to get a initial rendering of the model 1`] = `
                         value=\\"100\\"
                         class=\\"w3-squeed-black w3-border-white w3-center\\"
                         style=\\"display: inline-block\\"
-                        onchange=\\"send({subject: 'stories', action: 'edit', data: {text: this.value}})\\">
+                        onchange=\\"send({subject: 'stories', action: 'edit', data: this.value})\\">
                 </p>
                 <table class=\\"w3-table w3-centered\\">
                     <thead>
@@ -116,94 +116,562 @@ exports[`view should be possible to get a initial rendering of the model 1`] = `
                         <tr class=\\"w3-squeed-black\\">
                             
                                     <td>
-                                        <input
-                                            type=\\"text\\"
-                                            name=\\"field00\\"
-                                            value=\\"\\"
-                                            class=\\"w3-squeed-black w3-border-squeed-black w3-center\\"
-                                            size=\\"4\\"
-                                            style=\\"display: inline-block\\"
-                                            onchange=\\"send({
-                                                subject: 'field01',
-                                                action: 'edit',
-                                                data: {text: this.value}
-                                            })\\"
-                                            autofocus>
+                                        <div class=\\"w3-dropdown-hover w3-black\\">
+        <button class=\\"w3-button\\">
+            <img
+                src=\\"die1.svg\\"
+                height=\\"24px\\"
+                width=\\"24px\\" />
+        </button>
+        5
+        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\">
+            <button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field01',
+        action: 'edit',
+        data: '0',
+    })\\">
+    <img
+        src=\\"die1.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    5
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field01',
+        action: 'edit',
+        data: '1',
+    })\\">
+    <img
+        src=\\"die2.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    7
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field01',
+        action: 'edit',
+        data: '2',
+    })\\">
+    <img
+        src=\\"die3.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    5
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field01',
+        action: 'edit',
+        data: '3',
+    })\\">
+    <img
+        src=\\"die4.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    8
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field01',
+        action: 'edit',
+        data: '4',
+    })\\">
+    <img
+        src=\\"die5.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    12
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field01',
+        action: 'edit',
+        data: '5',
+    })\\">
+    <img
+        src=\\"die6.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    10
+</button>
+
+        </div>
+    </div>
+    
                                     </td>
                                     <td>
-                                        <input
-                                            type=\\"text\\"
-                                            name=\\"field00\\"
-                                            value=\\"\\"
-                                            class=\\"w3-squeed-black w3-border-squeed-black w3-center\\"
-                                            size=\\"4\\"
-                                            style=\\"display: inline-block\\"
-                                            onchange=\\"send({
-                                                subject: 'field02',
-                                                action: 'edit',
-                                                data: {text: this.value}
-                                            })\\"
-                                            >
+                                        <div class=\\"w3-dropdown-hover w3-black\\">
+        <button class=\\"w3-button\\">
+            <img
+                src=\\"die1.svg\\"
+                height=\\"24px\\"
+                width=\\"24px\\" />
+        </button>
+        5
+        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\">
+            <button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field02',
+        action: 'edit',
+        data: '0',
+    })\\">
+    <img
+        src=\\"die1.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    5
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field02',
+        action: 'edit',
+        data: '1',
+    })\\">
+    <img
+        src=\\"die2.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    7
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field02',
+        action: 'edit',
+        data: '2',
+    })\\">
+    <img
+        src=\\"die3.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    5
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field02',
+        action: 'edit',
+        data: '3',
+    })\\">
+    <img
+        src=\\"die4.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    8
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field02',
+        action: 'edit',
+        data: '4',
+    })\\">
+    <img
+        src=\\"die5.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    12
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field02',
+        action: 'edit',
+        data: '5',
+    })\\">
+    <img
+        src=\\"die6.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    10
+</button>
+
+        </div>
+    </div>
+    
                                     </td>
                                     <td>
-                                        <input
-                                            type=\\"text\\"
-                                            name=\\"field00\\"
-                                            value=\\"\\"
-                                            class=\\"w3-squeed-black w3-border-squeed-black w3-center\\"
-                                            size=\\"4\\"
-                                            style=\\"display: inline-block\\"
-                                            onchange=\\"send({
-                                                subject: 'field03',
-                                                action: 'edit',
-                                                data: {text: this.value}
-                                            })\\"
-                                            >
+                                        <div class=\\"w3-dropdown-hover w3-black\\">
+        <button class=\\"w3-button\\">
+            <img
+                src=\\"die1.svg\\"
+                height=\\"24px\\"
+                width=\\"24px\\" />
+        </button>
+        5
+        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\">
+            <button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field03',
+        action: 'edit',
+        data: '0',
+    })\\">
+    <img
+        src=\\"die1.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    5
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field03',
+        action: 'edit',
+        data: '1',
+    })\\">
+    <img
+        src=\\"die2.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    7
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field03',
+        action: 'edit',
+        data: '2',
+    })\\">
+    <img
+        src=\\"die3.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    5
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field03',
+        action: 'edit',
+        data: '3',
+    })\\">
+    <img
+        src=\\"die4.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    8
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field03',
+        action: 'edit',
+        data: '4',
+    })\\">
+    <img
+        src=\\"die5.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    12
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field03',
+        action: 'edit',
+        data: '5',
+    })\\">
+    <img
+        src=\\"die6.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    10
+</button>
+
+        </div>
+    </div>
+    
                                     </td>
                                     <td>
-                                        <input
-                                            type=\\"text\\"
-                                            name=\\"field00\\"
-                                            value=\\"\\"
-                                            class=\\"w3-squeed-black w3-border-squeed-black w3-center\\"
-                                            size=\\"4\\"
-                                            style=\\"display: inline-block\\"
-                                            onchange=\\"send({
-                                                subject: 'field04',
-                                                action: 'edit',
-                                                data: {text: this.value}
-                                            })\\"
-                                            >
+                                        <div class=\\"w3-dropdown-hover w3-black\\">
+        <button class=\\"w3-button\\">
+            <img
+                src=\\"die1.svg\\"
+                height=\\"24px\\"
+                width=\\"24px\\" />
+        </button>
+        5
+        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\">
+            <button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field04',
+        action: 'edit',
+        data: '0',
+    })\\">
+    <img
+        src=\\"die1.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    5
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field04',
+        action: 'edit',
+        data: '1',
+    })\\">
+    <img
+        src=\\"die2.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    7
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field04',
+        action: 'edit',
+        data: '2',
+    })\\">
+    <img
+        src=\\"die3.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    5
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field04',
+        action: 'edit',
+        data: '3',
+    })\\">
+    <img
+        src=\\"die4.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    8
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field04',
+        action: 'edit',
+        data: '4',
+    })\\">
+    <img
+        src=\\"die5.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    12
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field04',
+        action: 'edit',
+        data: '5',
+    })\\">
+    <img
+        src=\\"die6.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    10
+</button>
+
+        </div>
+    </div>
+    
                                     </td>
                                     <td>
-                                        <input
-                                            type=\\"text\\"
-                                            name=\\"field00\\"
-                                            value=\\"\\"
-                                            class=\\"w3-squeed-black w3-border-squeed-black w3-center\\"
-                                            size=\\"4\\"
-                                            style=\\"display: inline-block\\"
-                                            onchange=\\"send({
-                                                subject: 'field05',
-                                                action: 'edit',
-                                                data: {text: this.value}
-                                            })\\"
-                                            >
+                                        <div class=\\"w3-dropdown-hover w3-black\\">
+        <button class=\\"w3-button\\">
+            <img
+                src=\\"die1.svg\\"
+                height=\\"24px\\"
+                width=\\"24px\\" />
+        </button>
+        5
+        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\">
+            <button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field05',
+        action: 'edit',
+        data: '0',
+    })\\">
+    <img
+        src=\\"die1.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    5
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field05',
+        action: 'edit',
+        data: '1',
+    })\\">
+    <img
+        src=\\"die2.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    7
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field05',
+        action: 'edit',
+        data: '2',
+    })\\">
+    <img
+        src=\\"die3.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    5
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field05',
+        action: 'edit',
+        data: '3',
+    })\\">
+    <img
+        src=\\"die4.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    8
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field05',
+        action: 'edit',
+        data: '4',
+    })\\">
+    <img
+        src=\\"die5.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    12
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field05',
+        action: 'edit',
+        data: '5',
+    })\\">
+    <img
+        src=\\"die6.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    10
+</button>
+
+        </div>
+    </div>
+    
                                     </td>
                                     <td>
-                                        <input
-                                            type=\\"text\\"
-                                            name=\\"field00\\"
-                                            value=\\"\\"
-                                            class=\\"w3-squeed-black w3-border-squeed-black w3-center\\"
-                                            size=\\"4\\"
-                                            style=\\"display: inline-block\\"
-                                            onchange=\\"send({
-                                                subject: 'field06',
-                                                action: 'edit',
-                                                data: {text: this.value}
-                                            })\\"
-                                            >
+                                        <div class=\\"w3-dropdown-hover w3-black\\">
+        <button class=\\"w3-button\\">
+            <img
+                src=\\"die1.svg\\"
+                height=\\"24px\\"
+                width=\\"24px\\" />
+        </button>
+        5
+        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\">
+            <button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field06',
+        action: 'edit',
+        data: '0',
+    })\\">
+    <img
+        src=\\"die1.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    5
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field06',
+        action: 'edit',
+        data: '1',
+    })\\">
+    <img
+        src=\\"die2.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    7
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field06',
+        action: 'edit',
+        data: '2',
+    })\\">
+    <img
+        src=\\"die3.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    5
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field06',
+        action: 'edit',
+        data: '3',
+    })\\">
+    <img
+        src=\\"die4.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    8
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field06',
+        action: 'edit',
+        data: '4',
+    })\\">
+    <img
+        src=\\"die5.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    12
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field06',
+        action: 'edit',
+        data: '5',
+    })\\">
+    <img
+        src=\\"die6.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    10
+</button>
+
+        </div>
+    </div>
+    
                                     </td>
                         </tr>
                     </tbody>
@@ -216,7 +684,7 @@ exports[`view should be possible to get a initial rendering of the model 1`] = `
     onclick=\\"send({
       subject: 'add',
       action: 'click',
-      data: {counter: 0}
+      data: '0'
     })\\">
     Add
 </button>
@@ -228,7 +696,7 @@ exports[`view should be possible to get a initial rendering of the model 1`] = `
     onclick=\\"send({
       subject: 'generate',
       action: 'click',
-      data: {counter: 0}
+      data: '0'
     })\\">
     Generate
 </button>
@@ -240,7 +708,7 @@ exports[`view should be possible to get a initial rendering of the model 1`] = `
     onclick=\\"send({
       subject: 'generate100',
       action: 'click',
-      data: {counter: 0}
+      data: '0'
     })\\">
     Generate 100
 </button>
@@ -252,7 +720,7 @@ exports[`view should be possible to get a initial rendering of the model 1`] = `
     onclick=\\"send({
       subject: 'reset',
       action: 'click',
-      data: {counter: 0}
+      data: '0'
     })\\">
     Reset
 </button>
@@ -280,7 +748,7 @@ exports[`view should be possible to get a view with descriptions 1`] = `
     onclick=\\"send({
       subject: 'showDescriptions',
       action: 'click',
-      data: {counter: 0}
+      data: '0'
     })\\">
     Show descriptions
 </button>
@@ -396,7 +864,7 @@ exports[`view should be possible to get a view with descriptions 1`] = `
                         value=\\"100\\"
                         class=\\"w3-squeed-black w3-border-white w3-center\\"
                         style=\\"display: inline-block\\"
-                        onchange=\\"send({subject: 'stories', action: 'edit', data: {text: this.value}})\\">
+                        onchange=\\"send({subject: 'stories', action: 'edit', data: this.value})\\">
                 </p>
                 <table class=\\"w3-table w3-centered\\">
                     <thead>
@@ -414,94 +882,562 @@ exports[`view should be possible to get a view with descriptions 1`] = `
                         <tr class=\\"w3-squeed-black\\">
                             
                                     <td>
-                                        <input
-                                            type=\\"text\\"
-                                            name=\\"field00\\"
-                                            value=\\"\\"
-                                            class=\\"w3-squeed-black w3-border-squeed-black w3-center\\"
-                                            size=\\"4\\"
-                                            style=\\"display: inline-block\\"
-                                            onchange=\\"send({
-                                                subject: 'field01',
-                                                action: 'edit',
-                                                data: {text: this.value}
-                                            })\\"
-                                            autofocus>
+                                        <div class=\\"w3-dropdown-hover w3-black\\">
+        <button class=\\"w3-button\\">
+            <img
+                src=\\"die1.svg\\"
+                height=\\"24px\\"
+                width=\\"24px\\" />
+        </button>
+        5
+        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\">
+            <button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field01',
+        action: 'edit',
+        data: '0',
+    })\\">
+    <img
+        src=\\"die1.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    5
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field01',
+        action: 'edit',
+        data: '1',
+    })\\">
+    <img
+        src=\\"die2.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    7
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field01',
+        action: 'edit',
+        data: '2',
+    })\\">
+    <img
+        src=\\"die3.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    5
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field01',
+        action: 'edit',
+        data: '3',
+    })\\">
+    <img
+        src=\\"die4.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    8
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field01',
+        action: 'edit',
+        data: '4',
+    })\\">
+    <img
+        src=\\"die5.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    12
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field01',
+        action: 'edit',
+        data: '5',
+    })\\">
+    <img
+        src=\\"die6.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    10
+</button>
+
+        </div>
+    </div>
+    
                                     </td>
                                     <td>
-                                        <input
-                                            type=\\"text\\"
-                                            name=\\"field00\\"
-                                            value=\\"\\"
-                                            class=\\"w3-squeed-black w3-border-squeed-black w3-center\\"
-                                            size=\\"4\\"
-                                            style=\\"display: inline-block\\"
-                                            onchange=\\"send({
-                                                subject: 'field02',
-                                                action: 'edit',
-                                                data: {text: this.value}
-                                            })\\"
-                                            >
+                                        <div class=\\"w3-dropdown-hover w3-black\\">
+        <button class=\\"w3-button\\">
+            <img
+                src=\\"die1.svg\\"
+                height=\\"24px\\"
+                width=\\"24px\\" />
+        </button>
+        5
+        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\">
+            <button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field02',
+        action: 'edit',
+        data: '0',
+    })\\">
+    <img
+        src=\\"die1.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    5
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field02',
+        action: 'edit',
+        data: '1',
+    })\\">
+    <img
+        src=\\"die2.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    7
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field02',
+        action: 'edit',
+        data: '2',
+    })\\">
+    <img
+        src=\\"die3.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    5
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field02',
+        action: 'edit',
+        data: '3',
+    })\\">
+    <img
+        src=\\"die4.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    8
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field02',
+        action: 'edit',
+        data: '4',
+    })\\">
+    <img
+        src=\\"die5.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    12
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field02',
+        action: 'edit',
+        data: '5',
+    })\\">
+    <img
+        src=\\"die6.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    10
+</button>
+
+        </div>
+    </div>
+    
                                     </td>
                                     <td>
-                                        <input
-                                            type=\\"text\\"
-                                            name=\\"field00\\"
-                                            value=\\"\\"
-                                            class=\\"w3-squeed-black w3-border-squeed-black w3-center\\"
-                                            size=\\"4\\"
-                                            style=\\"display: inline-block\\"
-                                            onchange=\\"send({
-                                                subject: 'field03',
-                                                action: 'edit',
-                                                data: {text: this.value}
-                                            })\\"
-                                            >
+                                        <div class=\\"w3-dropdown-hover w3-black\\">
+        <button class=\\"w3-button\\">
+            <img
+                src=\\"die1.svg\\"
+                height=\\"24px\\"
+                width=\\"24px\\" />
+        </button>
+        5
+        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\">
+            <button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field03',
+        action: 'edit',
+        data: '0',
+    })\\">
+    <img
+        src=\\"die1.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    5
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field03',
+        action: 'edit',
+        data: '1',
+    })\\">
+    <img
+        src=\\"die2.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    7
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field03',
+        action: 'edit',
+        data: '2',
+    })\\">
+    <img
+        src=\\"die3.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    5
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field03',
+        action: 'edit',
+        data: '3',
+    })\\">
+    <img
+        src=\\"die4.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    8
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field03',
+        action: 'edit',
+        data: '4',
+    })\\">
+    <img
+        src=\\"die5.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    12
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field03',
+        action: 'edit',
+        data: '5',
+    })\\">
+    <img
+        src=\\"die6.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    10
+</button>
+
+        </div>
+    </div>
+    
                                     </td>
                                     <td>
-                                        <input
-                                            type=\\"text\\"
-                                            name=\\"field00\\"
-                                            value=\\"\\"
-                                            class=\\"w3-squeed-black w3-border-squeed-black w3-center\\"
-                                            size=\\"4\\"
-                                            style=\\"display: inline-block\\"
-                                            onchange=\\"send({
-                                                subject: 'field04',
-                                                action: 'edit',
-                                                data: {text: this.value}
-                                            })\\"
-                                            >
+                                        <div class=\\"w3-dropdown-hover w3-black\\">
+        <button class=\\"w3-button\\">
+            <img
+                src=\\"die1.svg\\"
+                height=\\"24px\\"
+                width=\\"24px\\" />
+        </button>
+        5
+        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\">
+            <button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field04',
+        action: 'edit',
+        data: '0',
+    })\\">
+    <img
+        src=\\"die1.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    5
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field04',
+        action: 'edit',
+        data: '1',
+    })\\">
+    <img
+        src=\\"die2.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    7
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field04',
+        action: 'edit',
+        data: '2',
+    })\\">
+    <img
+        src=\\"die3.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    5
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field04',
+        action: 'edit',
+        data: '3',
+    })\\">
+    <img
+        src=\\"die4.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    8
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field04',
+        action: 'edit',
+        data: '4',
+    })\\">
+    <img
+        src=\\"die5.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    12
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field04',
+        action: 'edit',
+        data: '5',
+    })\\">
+    <img
+        src=\\"die6.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    10
+</button>
+
+        </div>
+    </div>
+    
                                     </td>
                                     <td>
-                                        <input
-                                            type=\\"text\\"
-                                            name=\\"field00\\"
-                                            value=\\"\\"
-                                            class=\\"w3-squeed-black w3-border-squeed-black w3-center\\"
-                                            size=\\"4\\"
-                                            style=\\"display: inline-block\\"
-                                            onchange=\\"send({
-                                                subject: 'field05',
-                                                action: 'edit',
-                                                data: {text: this.value}
-                                            })\\"
-                                            >
+                                        <div class=\\"w3-dropdown-hover w3-black\\">
+        <button class=\\"w3-button\\">
+            <img
+                src=\\"die1.svg\\"
+                height=\\"24px\\"
+                width=\\"24px\\" />
+        </button>
+        5
+        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\">
+            <button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field05',
+        action: 'edit',
+        data: '0',
+    })\\">
+    <img
+        src=\\"die1.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    5
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field05',
+        action: 'edit',
+        data: '1',
+    })\\">
+    <img
+        src=\\"die2.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    7
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field05',
+        action: 'edit',
+        data: '2',
+    })\\">
+    <img
+        src=\\"die3.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    5
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field05',
+        action: 'edit',
+        data: '3',
+    })\\">
+    <img
+        src=\\"die4.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    8
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field05',
+        action: 'edit',
+        data: '4',
+    })\\">
+    <img
+        src=\\"die5.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    12
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field05',
+        action: 'edit',
+        data: '5',
+    })\\">
+    <img
+        src=\\"die6.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    10
+</button>
+
+        </div>
+    </div>
+    
                                     </td>
                                     <td>
-                                        <input
-                                            type=\\"text\\"
-                                            name=\\"field00\\"
-                                            value=\\"\\"
-                                            class=\\"w3-squeed-black w3-border-squeed-black w3-center\\"
-                                            size=\\"4\\"
-                                            style=\\"display: inline-block\\"
-                                            onchange=\\"send({
-                                                subject: 'field06',
-                                                action: 'edit',
-                                                data: {text: this.value}
-                                            })\\"
-                                            >
+                                        <div class=\\"w3-dropdown-hover w3-black\\">
+        <button class=\\"w3-button\\">
+            <img
+                src=\\"die1.svg\\"
+                height=\\"24px\\"
+                width=\\"24px\\" />
+        </button>
+        5
+        <div class=\\"w3-dropdown-content w3-bar-block w3-card-4\\">
+            <button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field06',
+        action: 'edit',
+        data: '0',
+    })\\">
+    <img
+        src=\\"die1.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    5
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field06',
+        action: 'edit',
+        data: '1',
+    })\\">
+    <img
+        src=\\"die2.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    7
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field06',
+        action: 'edit',
+        data: '2',
+    })\\">
+    <img
+        src=\\"die3.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    5
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field06',
+        action: 'edit',
+        data: '3',
+    })\\">
+    <img
+        src=\\"die4.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    8
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field06',
+        action: 'edit',
+        data: '4',
+    })\\">
+    <img
+        src=\\"die5.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    12
+</button>
+<button
+    class=\\"w3-button\\"
+    onclick=\\"send({
+        subject: 'field06',
+        action: 'edit',
+        data: '5',
+    })\\">
+    <img
+        src=\\"die6.svg\\"
+        height=\\"24px\\"
+        width=\\"24px\\" />
+    10
+</button>
+
+        </div>
+    </div>
+    
                                     </td>
                         </tr>
                     </tbody>
@@ -514,7 +1450,7 @@ exports[`view should be possible to get a view with descriptions 1`] = `
     onclick=\\"send({
       subject: 'add',
       action: 'click',
-      data: {counter: 0}
+      data: '0'
     })\\">
     Add
 </button>
@@ -526,7 +1462,7 @@ exports[`view should be possible to get a view with descriptions 1`] = `
     onclick=\\"send({
       subject: 'generate',
       action: 'click',
-      data: {counter: 0}
+      data: '0'
     })\\">
     Generate
 </button>
@@ -538,7 +1474,7 @@ exports[`view should be possible to get a view with descriptions 1`] = `
     onclick=\\"send({
       subject: 'generate100',
       action: 'click',
-      data: {counter: 0}
+      data: '0'
     })\\">
     Generate 100
 </button>
@@ -550,7 +1486,7 @@ exports[`view should be possible to get a view with descriptions 1`] = `
     onclick=\\"send({
       subject: 'reset',
       action: 'click',
-      data: {counter: 0}
+      data: '0'
     })\\">
     Reset
 </button>
