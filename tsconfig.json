@@ -61,7 +61,8 @@
 {
   "compilerOptions": {
     "module": "amd",
-    "target": "es6",
+    "target": "es2018",
+    "lib": ["dom", "es2018"],
     "strict": true,
 //    "noImplicitAny": true,
 //    "strictNullChecks": true,

@@ -18,8 +18,8 @@ export class Action {
     public reset() {
         const proposal: IProposal = {};
         proposal.counter = 0;
-        proposal.remainingStories = 100;
-        // proposal.activeField =
+        // proposal.remainingStories = 100;
+        proposal.activeField = "field01";
         // proposal.showDescriptions =
         proposal.nextSimulation = [0, 0, 0, 0, 0, 0];
         // proposal.historicalCapacity =
