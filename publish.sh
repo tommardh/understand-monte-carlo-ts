@@ -7,4 +7,5 @@ cp dist/*.html docs/
 cp dist/*.css docs/
 cp dist/*.jpg docs/
 cp dist/*.gif docs/
+cp dist/*.svg docs/
 cp dist/charts/*.js docs/charts/
