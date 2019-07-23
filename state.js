@@ -4,7 +4,7 @@ define(["require", "exports"], function (require, exports) {
     class State {
         constructor(view) {
             this.view = view;
-            // this.action = 
+            // this.action =
         }
         render(data) {
             this.representation(data);
@@ -23,8 +23,10 @@ define(["require", "exports"], function (require, exports) {
         }
         nextAction(data) {
             if (data.counter === 10) {
-                let prop = { counter: data.counter };
-                this.action.generate(prop, 1);
+                if (data.nextSimulation.reduce((a, b) => (a + b), 0) === 0) {
+                    this.action.generate(1);
+                    this.action.addManualSimulation();
+                }
             }
         }
     }

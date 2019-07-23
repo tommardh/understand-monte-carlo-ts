@@ -6,6 +6,7 @@ define(["require", "exports"], function (require, exports) {
             this.action = action;
         }
         send(message) {
+            console.log('--- Message Broker ---');
             console.table(message);
             if (message.subject) {
                 if (message.subject === "reset") {
@@ -47,6 +48,13 @@ define(["require", "exports"], function (require, exports) {
                     if (message.action === "edit") {
                         if (message.data) {
                             this.action.editStories(message.data);
+                        }
+                    }
+                }
+                else if (message.subject === "showDescriptions") {
+                    if (message.action === "click") {
+                        if (message.data) {
+                            this.action.showDescriptionsClick(message.data);
                         }
                     }
                 }

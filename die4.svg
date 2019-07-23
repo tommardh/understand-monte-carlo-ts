@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <!-- Created with Vectornator for iOS (http://vectornator.io/) --><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg height="100%" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="100%" xmlns:vectornator="http://vectornator.io" version="1.1" viewBox="0 0 48 48">
+<metadata>
+<vectornator:setting key="DisplayWhiteBackground" value="0"/>
+<vectornator:setting key="RulersVisible" value="1"/>
+<vectornator:setting key="SnapToEdges" value="0"/>
+<vectornator:setting key="Units" value="Pixels"/>
+<vectornator:setting key="DynamicGuides" value="1"/>
+<vectornator:setting key="SnapToPoints" value="1"/>
+<vectornator:setting key="SnapToGrid" value="1"/>
+<vectornator:setting key="SnapToGuides" value="1"/>
+<vectornator:setting key="ShowGrid" value="1"/>
+<vectornator:setting key="GridSpacing" value="3"/>
+</metadata>
+<defs/>
+<g id="Layer 1" vectornator:layerName="Layer 1">
+<path stroke="#000000" stroke-width="1" d="M9.38298+3L38.617+3C42.1422+3+45+5.85776+45+9.38298L45+38.617C45+42.1422+42.1422+45+38.617+45L9.38298+45C5.85776+45+3+42.1422+3+38.617L3+9.38298C3+5.85776+5.85776+3+9.38298+3Z" fill="#f7f7f7" stroke-linecap="butt" opacity="1" stroke-linejoin="round"/>
+<path stroke="#000000" stroke-width="1" d="M33+12C33+10.3431+34.3431+9+36+9C37.6569+9+39+10.3431+39+12C39+13.6569+37.6569+15+36+15C34.3431+15+33+13.6569+33+12Z" fill="#010101" stroke-linecap="butt" opacity="1" stroke-linejoin="round"/>
+<path stroke="#000000" stroke-width="1" d="M9+36C9+34.3431+10.3431+33+12+33C13.6569+33+15+34.3431+15+36C15+37.6569+13.6569+39+12+39C10.3431+39+9+37.6569+9+36Z" fill="#010101" stroke-linecap="butt" opacity="1" stroke-linejoin="round"/>
+<path stroke="#000000" stroke-width="1" d="M9+12C9+10.3431+10.3431+9+12+9C13.6569+9+15+10.3431+15+12C15+13.6569+13.6569+15+12+15C10.3431+15+9+13.6569+9+12Z" fill="#010101" stroke-linecap="butt" opacity="1" stroke-linejoin="round"/>
+<path stroke="#000000" stroke-width="1" d="M33+36C33+34.3431+34.3431+33+36+33C37.6569+33+39+34.3431+39+36C39+37.6569+37.6569+39+36+39C34.3431+39+33+37.6569+33+36Z" fill="#010101" stroke-linecap="butt" opacity="1" stroke-linejoin="round"/>
+</g>
+</svg>

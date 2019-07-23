@@ -1,12 +1,16 @@
 define(["require", "exports", "./action.js", "./model.js", "./state.js", "./view.js"], function (require, exports, action_js_1, model_js_1, state_js_1, view_js_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const data = { counter: 0,
+    const data = {
+        counter: 0,
         remainingStories: 100,
         activeField: "field01",
+        showDescriptions: true,
         nextSimulation: [0, 0, 0, 0, 0, 0],
         historicalCapacity: [5, 7, 5, 8, 12, 10],
-        simulations: [] };
+        simulations: [],
+        calculatedData: [],
+    };
     const view = new view_js_1.View();
     const state = new state_js_1.State(view); // , action);
     const model = new model_js_1.Model(data, state);
@@ -14,33 +18,32 @@ define(["require", "exports", "./action.js", "./model.js", "./state.js", "./view
     state.action = action;
     view.display(view.init(model.data));
     function send(message) {
+        console.log(action);
         console.table(message);
         if (message.subject) {
             if (message.subject === "reset") {
                 if (message.action === "click") {
-                    if (message.data) {
-                        action.reset(message.data);
-                    }
+                    action.reset();
                 }
             }
             else if (message.subject === "generate") {
                 if (message.action === "click") {
                     if (message.data) {
-                        action.generate(message.data, 1);
+                        action.generate(1);
                     }
                 }
             }
             else if (message.subject === "generate100") {
                 if (message.action === "click") {
                     if (message.data) {
-                        action.generate(message.data, 100);
+                        action.generate(100);
                     }
                 }
             }
             else if (message.subject === "add") {
                 if (message.action === "click") {
                     if (message.data) {
-                        action.addManualSimulation(message.data);
+                        action.addManualSimulation();
                     }
                 }
             }
@@ -55,6 +58,13 @@ define(["require", "exports", "./action.js", "./model.js", "./state.js", "./view
                 if (message.action === "edit") {
                     if (message.data) {
                         action.editStories(message.data);
+                    }
+                }
+            }
+            else if (message.subject === "showDescriptions") {
+                if (message.action === "click") {
+                    if (message.data) {
+                        action.showDescriptionsClick();
                     }
                 }
             }
