@@ -36,13 +36,14 @@ function generateDieButton(variable: string, value: number, values: number[]) {
 }
 
 export function generateDiceDropdown(variable: string, value: number, values: number[], alignment: string = "left") {
-    return `<div class="w3-dropdown-hover w3-black">
+    return `<div class="w3-dropdown-hover w3-squeed-black">
         <button class="w3-button">
             <img
                 src="die${value + 1}.svg"
                 height="24px"
                 width="24px" />
         </button>
+        <br/>
         ${values[value]}
         <div class="w3-dropdown-content w3-bar-block w3-card-4" style="${alignment}:0">
             ${values.reduce<string>((accumulator: string, currentValue: number, currentIndex: number) => {

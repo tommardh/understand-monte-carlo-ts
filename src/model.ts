@@ -72,7 +72,7 @@ export class Model {
         return data.counter === 0 &&
             data.remainingStories === 100 &&
             data.activeField === "field01" &&
-            data.showDescriptions === false &&
+            data.showDescriptions === true &&
             JSON.stringify(data.nextSimulation) === JSON.stringify([0, 0, 0, 0, 0, 0]) &&
             JSON.stringify(data.historicalCapacity) === JSON.stringify([5, 7, 5, 8, 12, 10]) &&
             JSON.stringify(data.simulations) === JSON.stringify([])  &&
@@ -85,7 +85,7 @@ export class Model {
         return data.counter === 0 &&
             data.remainingStories === undefined &&
             data.activeField === "field01" &&
-            data.showDescriptions === undefined &&
+            data.showDescriptions === true &&
             JSON.stringify(data.nextSimulation) === JSON.stringify([0, 0, 0, 0, 0, 0]) &&
             data.historicalCapacity === undefined &&
             JSON.stringify(data.simulations) === JSON.stringify([])  &&
@@ -110,7 +110,7 @@ export class Model {
         return data.counter === this.data.counter + nrSimulations &&
             data.remainingStories === undefined &&
             data.activeField === undefined &&
-            data.showDescriptions === undefined &&
+            data.showDescriptions === false &&
             JSON.stringify(data.nextSimulation) === JSON.stringify([0, 0, 0, 0, 0, 0]) &&
             data.historicalCapacity === undefined &&
             data.simulations ?
@@ -130,7 +130,7 @@ export class Model {
         return data.counter === this.data.counter + nrSimulations &&
             data.remainingStories === undefined &&
             data.activeField === undefined &&
-            data.showDescriptions === undefined &&
+            data.showDescriptions === false &&
             data.nextSimulation === undefined &&
             data.historicalCapacity === undefined &&
             data.simulations ?

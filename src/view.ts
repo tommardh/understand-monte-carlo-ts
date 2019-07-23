@@ -18,21 +18,28 @@ export class View {
         console.log("model: -----------------------");
         console.log(JSON.stringify(model));
         return `
-${this.drawHeader()}
-<div class="w3-display-container w3-row">
-${generateButton("Show descriptions", "showDescriptions", model.counter)}
-</div>
-${model.showDescriptions ? this.drawDescription() : ""}
-${this.drawHistory(model.historicalCapacity, model.showDescriptions)}
-${this.drawForm(
-    model.counter,
-    model.remainingStories,
-    model.nextSimulation,
-    model.historicalCapacity,
-    model.activeField,
-)}
-${this.drawData(model)}
-${this.drawFooter()}`;
+<div class="w3-medium">
+    ${this.drawHeader()}
+        <div class="w3-display-container w3-row">
+            </div>
+            <div class="w3-cell-row">
+                <div class="w3-cell w3-padding w3-mobile" style="width:50%"">
+                ${this.drawHistory(model.historicalCapacity, model.showDescriptions)}
+                ${this.drawForm(
+                    model.counter,
+                    model.remainingStories,
+                    model.nextSimulation,
+                    model.historicalCapacity,
+                    model.activeField,
+                )}
+                ${this.drawFooter()}
+            </div>
+            <div class="w3-cell w3-padding w3-mobile" style="width:50%">
+                ${model.showDescriptions ? this.drawDescription() : ""}
+                ${this.drawData(model)}
+            </div>
+    </div>
+</div>`;
     }
 
     private drawHeader() {
@@ -49,36 +56,39 @@ ${this.drawFooter()}`;
 
     private drawDescription() {
         return `
-            <h2>Introduction</h2>
+            <h2>Description</h2>
             <p>
                 The purpose of this application is to build understanding of how <b>Monte Carlo Simulation</b>
                 works. To accomplish this a short description of the method and a short introduction to the
                 scenario used in the application follows.
             </p>
             <p>
-                <b>Monte Carlo Simulation</b> is a statistical method that we use, in this context, to make a
-                forecast of how many more iterations we need to be able to close the remaning stories in our scope,
-                based upon how much we have delivered in the past. The forecast is built from a large number of
-                samples generated as combinations of velocities from our previous iterations.
+                <b>Monte Carlo Simulation</b> is a statistical method that, in this context, makes a
+                forecast of how many more iterations we need to be able to close the remaning stories in the scope,
+                based upon how much was delivered in the past. The forecast is built from a large number of
+                samples generated as combinations of velocities from the previous iterations.
             </p>
-            <p>
-                <b>Exercise Introduction</b> - The table below shows the velocity of the teams for the last 6 iterations
-                and we have 100 stories remaning. When can they be delivered?
-                We use 6 iterations because a die have 6 sides.
-                In real life it may be sufficient with data from three or four iterations.
-            </p>
-            <ol>
-                <li>Role 6 dice (one for each column in the <i>Create Simulation Data</i> section)</li>
-                <li>
-                    For each die write the velocity that corresponds to number on the die (e.g.
-                    Die with number 2 yields a velocity of 7)
-                </li>
-                <li>Press <i>Add</i> when all 6 numbers are entered.
-            </ol>
-            <p>
-                Continue as long as it makes sense and then you can use the
-                <i>Generate</i> buttons to get more samples faster.
-            </p>
+            <div class="w3-card w3-squeed-orange w3-text-black w3-round w3-margin w3-padding">
+                <p>
+                    <b>Exercise Introduction</b> -
+                    The table below shows the velocity of the teams for the last six iterations
+                    and we have 100 stories remaning. When can they be delivered?
+                    We use six iterations because a dice have six sides.
+                    In real life it may be sufficient with data from three or four iterations.
+                </p>
+                <ol>
+                    <li>Role six die (one for each column in the <i>Create Simulation Data</i> section)</li>
+                    <li>
+                        For each dice write the velocity that corresponds to number on the dice<br/>
+                        (e.g. Dice with number two yields a velocity of seven)
+                    </li>
+                    <li>Press <i>Add</i> when all 6 numbers are entered.
+                </ol>
+                <p>
+                    Continue as long as it makes sense and then you can use the
+                    <i>Generate</i> button to get more samples faster.
+                </p>
+            </div>
             <p>
                 Data calculated will be shown as a chart and in a table. In the table you can follow the calculations.
                 The last sample is in the top of the table. For each sample the average velocity is calculated and this
@@ -90,7 +100,7 @@ ${this.drawFooter()}`;
     private drawHistory(data: number[], showDescriptions: boolean) {
         return `
             <h2>Througput the Last 6 Iterations</h2>
-            ${showDescriptions ? `<p>The table below shows the velocity of the team for the last 6 iterations</p>` : ""}
+            <p>The table below shows the velocity of the team for the last 6 iterations</p>
             <table class="w3-table w3-centered">
                 <thead>
                     <tr class="w3-squeed-orange w3-text-squeed-black">
@@ -101,6 +111,7 @@ ${this.drawFooter()}`;
                                         src="die${currentIndex + 1}.svg"
                                         height="24px"
                                         width="24px" />
+                                    <br/>
                                     Iteration ${currentIndex + 1}
                                 </th>`;
                         }, "")}
@@ -135,6 +146,7 @@ ${this.drawFooter()}`;
                         style="display: inline-block"
                         onchange="send({subject: 'stories', action: 'edit', data: this.value})">
                 </p>
+                <p>The table below shows the six volocities building the next sample</p>
                 <table class="w3-table w3-centered">
                     <thead>
                         <tr class="w3-squeed-orange w3-text-squeed-black w3-center">
@@ -145,7 +157,7 @@ ${this.drawFooter()}`;
                         <tr class="w3-squeed-black">
                             ${data.reduce<string>((accumulator: string, currentValue: number, currentIndex: number) => {
                                 return `${accumulator}
-                                    <td>
+                                    <td class="w3-center">
                                         ${generateDiceDropdown(
                                             "field0" + (currentIndex + 1),
                                             currentValue,
@@ -161,7 +173,7 @@ ${this.drawFooter()}`;
                 <div class="w3-row">
                     ${generateButton("Add", "add", count)}
                     <div class="w3-col" style="width:4%">&nbsp</div>
-                    ${generateButton("Generate", "generate", count)}
+                    ${generateButton("Roll Die", "generate", count)}
                     <div class="w3-col" style="width:4%">&nbsp</div>
                     ${generateButton("Generate 100", "generate100", count)}
                     <div class="w3-col" style="width:4%">&nbsp</div>
@@ -175,8 +187,9 @@ ${this.drawFooter()}`;
         let output: string = "";
         if (data.length > 0) {
             output = `
-                <h2>Simulation Data</h2>
+                <h2>Simulation Visualization</h2>
                 ${this.drawChart(model)}
+                <h2>Simulation Data</h2>
                 <table class="w3-table w3-centered">
                     <thead>
                         <tr class="w3-squeed-orange w3-text-squeed-black">
@@ -195,13 +208,13 @@ ${this.drawFooter()}`;
                         ) => {
                             const sum = currentValue.reduce((a, b) => (a + b), 0);
                             const average = sum / currentValue.length;
-                            const remainingIterations = Math.floor(remainingItems / average);
+                            const remainingIterations = Math.ceil(remainingItems / average);
 
                             return `${accumulator}
                                 <tr class="w3-squeed-black">
                                     <td>${currentIndex + 1}</td>
                                     ${repeatElements("td", currentValue)}
-                                    <td>${Math.floor(average * 10) / 10}</td>
+                                    <td>${Math.ceil(average * 10) / 10}</td>
                                     <td>${remainingIterations}</td>
                                 </tr>`;
                         }, "")}
@@ -229,7 +242,7 @@ ${this.drawFooter()}`;
       model.calculatedData.forEach((simulation) => {
           sum = simulation.reduce((a, b) => a + b, 0);
           average = sum / model.historicalCapacity.length;
-          remaining = Math.floor(model.remainingStories / average);
+          remaining = Math.ceil(model.remainingStories / average);
           if (vector[remaining] === undefined) {
               vector[remaining] = 0;
           }

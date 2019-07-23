@@ -20,7 +20,7 @@ export class Action {
         proposal.counter = 0;
         // proposal.remainingStories = 100;
         proposal.activeField = "field01";
-        // proposal.showDescriptions =
+        proposal.showDescriptions = true;
         proposal.nextSimulation = [0, 0, 0, 0, 0, 0];
         // proposal.historicalCapacity =
         proposal.simulations = [];
@@ -35,7 +35,7 @@ export class Action {
         if (nrSamples > 1) {
             proposal.counter = this.model.data.counter + nrSamples;
             // proposal.activeField =
-            // proposal.showDescriptions =
+            proposal.showDescriptions = false;
             // proposal.nextSimulation = [0, 0, 0, 0, 0, 0];
             proposal.simulations = newSimulations;
             proposal.calculatedData = newSimulations.map((simulation: number[]) => {
@@ -59,7 +59,7 @@ export class Action {
         const proposal: IProposal = {}; // data || {};
         proposal.counter = this.model.data.counter + 1;
         // proposal.activeField =
-        // proposal.showDescriptions =
+        proposal.showDescriptions = false;
         proposal.nextSimulation = [0, 0, 0, 0, 0, 0];
         proposal.simulations = [this.model.data.nextSimulation];
         proposal.calculatedData = [
