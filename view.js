@@ -60,22 +60,22 @@ define(["require", "exports", "./charts/charts", "./templateUtils"], function (r
             <div class="w3-card w3-squeed-orange w3-text-black w3-round w3-margin w3-padding">
                 <p>
                     <b>Exercise Introduction</b> -
-                    The table below shows the velocity of the teams for the last six iterations
+                    The first table shows the velocity of the teams for the last six iterations
                     and we have 100 stories remaning. When can they be delivered?
                     We use six iterations because a dice have six sides.
                     In real life it may be sufficient with data from three or four iterations.
                 </p>
                 <ol>
-                    <li>Role six die (one for each column in the <i>Create Simulation Data</i> section)</li>
+                    <li>Role six dice (one for each column in the <i>Create Simulation Data</i> section)</li>
                     <li>
-                        For each dice write the velocity that corresponds to number on the dice<br/>
+                        For each dice update the velocity that corresponds to number on the dice<br/>
                         (e.g. Dice with number two yields a velocity of seven)
                     </li>
-                    <li>Press <i>Add</i> when all 6 numbers are entered.
+                    <li>Press <i>Add</i> when all 6 velocities are entered.
                 </ol>
                 <p>
                     Continue as long as it makes sense and then you can use the
-                    <i>Generate</i> button to get more samples faster.
+                    <i>Roll Dice</i> button to get more samples faster.
                 </p>
             </div>
             <p>
@@ -149,9 +149,9 @@ define(["require", "exports", "./charts/charts", "./templateUtils"], function (r
                 <div class="w3-row">
                     ${templateUtils_1.generateButton("Add", "add", count)}
                     <div class="w3-col" style="width:4%">&nbsp</div>
-                    ${templateUtils_1.generateButton("Roll Die", "generate", count)}
+                    ${templateUtils_1.generateButton("Roll Dice", "generate", count)}
                     <div class="w3-col" style="width:4%">&nbsp</div>
-                    ${templateUtils_1.generateButton("Generate 100", "generate100", count)}
+                    ${templateUtils_1.generateButton("Generate & Add 100", "generate100", count)}
                     <div class="w3-col" style="width:4%">&nbsp</div>
                     ${templateUtils_1.generateButton("Reset", "reset")}
                 </div>`;
