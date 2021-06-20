@@ -104,9 +104,8 @@ export class Model {
     }
 
     private addAcceptor(data: IProposal) {
-        const nrSimulations = (
-            data ? (data.simulations ? (data.simulations.length ? data.simulations.length : 0) : 0) : 0
-        );
+        const nrSimulations = this.getNumberOfSimulations(data);
+        
         return data.counter === this.data.counter + nrSimulations &&
             data.remainingStories === undefined &&
             data.activeField === undefined &&
@@ -117,10 +116,21 @@ export class Model {
                 data.simulations.length === nrSimulations &&
                 this.AllNumbersAreInRange(data.simulations, 0, this.data.historicalCapacity.length) :
                 false &&
-            data.calculatedData ?
-                data.calculatedData.length === nrSimulations &&
-                this.AllNumbersAreInArray(data.calculatedData, this.data.historicalCapacity) :
-                false;
+            this.acceptCalculatedData(data);
+    }
+
+    private getNumberOfSimulations(data: IProposal) {
+        return (
+            data ? (data.simulations ? (data.simulations.length ? data.simulations.length : 0) : 0) : 0
+        );
+    }
+
+    private acceptCalculatedData(data: IProposal) {
+        const nrSimulations = this.getNumberOfSimulations(data);
+        return data.calculatedData ?
+        data.calculatedData.length === nrSimulations &&
+        this.AllNumbersAreInArray(data.calculatedData, this.data.historicalCapacity) :
+        false;
     }
 
     private generateSeveralAcceptor(data: IProposal) {
@@ -137,10 +147,7 @@ export class Model {
                 data.simulations.length === nrSimulations &&
                 this.AllNumbersAreInRange(data.simulations, 0, this.data.historicalCapacity.length) :
                 false &&
-            data.calculatedData ?
-                data.calculatedData.length === nrSimulations &&
-                this.AllNumbersAreInArray(data.calculatedData, this.data.historicalCapacity) :
-                false;
+            this.acceptCalculatedData(data);
     }
 
     private generateAcceptor(data: IProposal) {

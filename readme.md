@@ -18,4 +18,5 @@ Commit and push
 
 `git checkout master`
 
-and we are back on track. 
+and we are back on track.
+ 
