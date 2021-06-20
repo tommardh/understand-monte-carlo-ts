@@ -730,7 +730,7 @@ exports[`view should be possible to get a initial rendering of the model 1`] = `
 </button>
 
                 </div>
-                <br /><img src=\\"squeed_4c_neg.gif\\" width=\\"100\\">
+                <br /><img src=\\"logo.gif\\" width=\\"100\\">
             </div>
             <div class=\\"w3-cell w3-padding w3-mobile\\" style=\\"width:50%\\">
                 
@@ -1470,7 +1470,7 @@ exports[`view should be possible to get a view with descriptions 1`] = `
 </button>
 
                 </div>
-                <br /><img src=\\"squeed_4c_neg.gif\\" width=\\"100\\">
+                <br /><img src=\\"logo.gif\\" width=\\"100\\">
             </div>
             <div class=\\"w3-cell w3-padding w3-mobile\\" style=\\"width:50%\\">
                 

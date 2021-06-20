@@ -225,7 +225,7 @@ export class View {
     }
 
     private drawFooter() {
-      return `<br /><img src="squeed_4c_neg.gif" width="100">`;
+      return `<br /><img src="logo.gif" width="100">`;
     }
 
     private drawChart(model: IModel) {
