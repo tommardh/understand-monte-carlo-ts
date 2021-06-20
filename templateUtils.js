@@ -1,6 +1,7 @@
 define(["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.generateDiceDropdown = exports.generateButton = exports.repeatElements = void 0;
     function repeatElements(tag, elements, prefix = "", index = false) {
         return `${elements.reduce((accumulator, currentValue, currentIndex) => {
             return `${accumulator}<${tag}>${prefix}${index ? currentIndex + 1 : currentValue}</${tag}>

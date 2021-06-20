@@ -1,6 +1,7 @@
 define(["require", "exports", "./charts/charts", "./templateUtils"], function (require, exports, charts_1, templateUtils_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.View = void 0;
     class View {
         display(representation) {
             const stateRepresentation = document.getElementById("view");

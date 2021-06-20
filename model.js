@@ -1,6 +1,7 @@
 define(["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.Model = void 0;
     class Model {
         constructor(data, state) {
             if (this.accept(data)) {
@@ -97,7 +98,7 @@ define(["require", "exports"], function (require, exports) {
                 JSON.stringify(data.calculatedData) === undefined;
         }
         addAcceptor(data) {
-            const nrSimulations = (data ? (data.simulations ? (data.simulations.length ? data.simulations.length : 0) : 0) : 0);
+            const nrSimulations = this.getNumberOfSimulations(data);
             return data.counter === this.data.counter + nrSimulations &&
                 data.remainingStories === undefined &&
                 data.activeField === undefined &&
@@ -108,10 +109,17 @@ define(["require", "exports"], function (require, exports) {
                 data.simulations.length === nrSimulations &&
                     this.AllNumbersAreInRange(data.simulations, 0, this.data.historicalCapacity.length) :
                 false &&
-                    data.calculatedData ?
-                    data.calculatedData.length === nrSimulations &&
-                        this.AllNumbersAreInArray(data.calculatedData, this.data.historicalCapacity) :
-                    false;
+                    this.acceptCalculatedData(data);
+        }
+        getNumberOfSimulations(data) {
+            return (data ? (data.simulations ? (data.simulations.length ? data.simulations.length : 0) : 0) : 0);
+        }
+        acceptCalculatedData(data) {
+            const nrSimulations = this.getNumberOfSimulations(data);
+            return data.calculatedData ?
+                data.calculatedData.length === nrSimulations &&
+                    this.AllNumbersAreInArray(data.calculatedData, this.data.historicalCapacity) :
+                false;
         }
         generateSeveralAcceptor(data) {
             const nrSimulations = (data ? (data.simulations ? (data.simulations.length ? data.simulations.length : 0) : 0) : 0);
@@ -125,10 +133,7 @@ define(["require", "exports"], function (require, exports) {
                 data.simulations.length === nrSimulations &&
                     this.AllNumbersAreInRange(data.simulations, 0, this.data.historicalCapacity.length) :
                 false &&
-                    data.calculatedData ?
-                    data.calculatedData.length === nrSimulations &&
-                        this.AllNumbersAreInArray(data.calculatedData, this.data.historicalCapacity) :
-                    false;
+                    this.acceptCalculatedData(data);
         }
         generateAcceptor(data) {
             return data.counter === undefined &&
