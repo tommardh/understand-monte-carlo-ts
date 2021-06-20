@@ -7,7 +7,7 @@ exports[`view should be possible to get a initial rendering of the model 1`] = `
             <div class=\\"w3-display-container\\">
                 <img src=\\"montecarlo.jpg\\" class=\\"w3-image\\">
                     <h1
-                        class=\\"w3-display-topleft w3-container w3-text-squeed-orange\\"
+                        class=\\"w3-display-topleft w3-container w3-text-my-orange\\"
                         style=\\"text-shadow:1px 1px 0 #000\\">
                         <b>MONTE CARLO SIMULATION</b>
                     </h1>
@@ -21,7 +21,7 @@ exports[`view should be possible to get a initial rendering of the model 1`] = `
             <p>The table below shows the velocity of the team for the last 6 iterations</p>
             <table class=\\"w3-table w3-centered\\">
                 <thead>
-                    <tr class=\\"w3-squeed-orange w3-text-squeed-black\\">
+                    <tr class=\\"w3-my-orange w3-text-my-black\\">
                         
                                 <th>
                                     <img
@@ -74,7 +74,7 @@ exports[`view should be possible to get a initial rendering of the model 1`] = `
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class=\\"w3-squeed-black\\">
+                    <tr class=\\"w3-my-black\\">
                         
 <td>5</td>
 <td>7</td>
@@ -93,14 +93,14 @@ exports[`view should be possible to get a initial rendering of the model 1`] = `
                         type=\\"text\\"
                         name=\\"stories\\"
                         value=\\"100\\"
-                        class=\\"w3-squeed-black w3-border-white w3-center\\"
+                        class=\\"w3-my-black w3-border-white w3-center\\"
                         style=\\"display: inline-block\\"
                         onchange=\\"send({subject: 'stories', action: 'edit', data: this.value})\\">
                 </p>
                 <p>The table below shows the six volocities building the next sample</p>
                 <table class=\\"w3-table w3-centered\\">
                     <thead>
-                        <tr class=\\"w3-squeed-orange w3-text-squeed-black w3-center\\">
+                        <tr class=\\"w3-my-orange w3-text-my-black w3-center\\">
                             <th>Iteration 1</th>
 <th>Iteration 2</th>
 <th>Iteration 3</th>
@@ -111,10 +111,10 @@ exports[`view should be possible to get a initial rendering of the model 1`] = `
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class=\\"w3-squeed-black\\">
+                        <tr class=\\"w3-my-black\\">
                             
                                     <td class=\\"w3-center\\">
-                                        <div class=\\"w3-dropdown-hover w3-squeed-black\\">
+                                        <div class=\\"w3-dropdown-hover w3-my-black\\">
         <button class=\\"w3-button\\">
             <img
                 src=\\"die1.svg\\"
@@ -208,7 +208,7 @@ exports[`view should be possible to get a initial rendering of the model 1`] = `
     
                                     </td>
                                     <td class=\\"w3-center\\">
-                                        <div class=\\"w3-dropdown-hover w3-squeed-black\\">
+                                        <div class=\\"w3-dropdown-hover w3-my-black\\">
         <button class=\\"w3-button\\">
             <img
                 src=\\"die1.svg\\"
@@ -302,7 +302,7 @@ exports[`view should be possible to get a initial rendering of the model 1`] = `
     
                                     </td>
                                     <td class=\\"w3-center\\">
-                                        <div class=\\"w3-dropdown-hover w3-squeed-black\\">
+                                        <div class=\\"w3-dropdown-hover w3-my-black\\">
         <button class=\\"w3-button\\">
             <img
                 src=\\"die1.svg\\"
@@ -396,7 +396,7 @@ exports[`view should be possible to get a initial rendering of the model 1`] = `
     
                                     </td>
                                     <td class=\\"w3-center\\">
-                                        <div class=\\"w3-dropdown-hover w3-squeed-black\\">
+                                        <div class=\\"w3-dropdown-hover w3-my-black\\">
         <button class=\\"w3-button\\">
             <img
                 src=\\"die1.svg\\"
@@ -490,7 +490,7 @@ exports[`view should be possible to get a initial rendering of the model 1`] = `
     
                                     </td>
                                     <td class=\\"w3-center\\">
-                                        <div class=\\"w3-dropdown-hover w3-squeed-black\\">
+                                        <div class=\\"w3-dropdown-hover w3-my-black\\">
         <button class=\\"w3-button\\">
             <img
                 src=\\"die1.svg\\"
@@ -584,7 +584,7 @@ exports[`view should be possible to get a initial rendering of the model 1`] = `
     
                                     </td>
                                     <td class=\\"w3-center\\">
-                                        <div class=\\"w3-dropdown-hover w3-squeed-black\\">
+                                        <div class=\\"w3-dropdown-hover w3-my-black\\">
         <button class=\\"w3-button\\">
             <img
                 src=\\"die1.svg\\"
@@ -747,7 +747,7 @@ exports[`view should be possible to get a view with descriptions 1`] = `
             <div class=\\"w3-display-container\\">
                 <img src=\\"montecarlo.jpg\\" class=\\"w3-image\\">
                     <h1
-                        class=\\"w3-display-topleft w3-container w3-text-squeed-orange\\"
+                        class=\\"w3-display-topleft w3-container w3-text-my-orange\\"
                         style=\\"text-shadow:1px 1px 0 #000\\">
                         <b>MONTE CARLO SIMULATION</b>
                     </h1>
@@ -761,7 +761,7 @@ exports[`view should be possible to get a view with descriptions 1`] = `
             <p>The table below shows the velocity of the team for the last 6 iterations</p>
             <table class=\\"w3-table w3-centered\\">
                 <thead>
-                    <tr class=\\"w3-squeed-orange w3-text-squeed-black\\">
+                    <tr class=\\"w3-my-orange w3-text-my-black\\">
                         
                                 <th>
                                     <img
@@ -814,7 +814,7 @@ exports[`view should be possible to get a view with descriptions 1`] = `
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class=\\"w3-squeed-black\\">
+                    <tr class=\\"w3-my-black\\">
                         
 <td>5</td>
 <td>7</td>
@@ -833,14 +833,14 @@ exports[`view should be possible to get a view with descriptions 1`] = `
                         type=\\"text\\"
                         name=\\"stories\\"
                         value=\\"100\\"
-                        class=\\"w3-squeed-black w3-border-white w3-center\\"
+                        class=\\"w3-my-black w3-border-white w3-center\\"
                         style=\\"display: inline-block\\"
                         onchange=\\"send({subject: 'stories', action: 'edit', data: this.value})\\">
                 </p>
                 <p>The table below shows the six volocities building the next sample</p>
                 <table class=\\"w3-table w3-centered\\">
                     <thead>
-                        <tr class=\\"w3-squeed-orange w3-text-squeed-black w3-center\\">
+                        <tr class=\\"w3-my-orange w3-text-my-black w3-center\\">
                             <th>Iteration 1</th>
 <th>Iteration 2</th>
 <th>Iteration 3</th>
@@ -851,10 +851,10 @@ exports[`view should be possible to get a view with descriptions 1`] = `
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class=\\"w3-squeed-black\\">
+                        <tr class=\\"w3-my-black\\">
                             
                                     <td class=\\"w3-center\\">
-                                        <div class=\\"w3-dropdown-hover w3-squeed-black\\">
+                                        <div class=\\"w3-dropdown-hover w3-my-black\\">
         <button class=\\"w3-button\\">
             <img
                 src=\\"die1.svg\\"
@@ -948,7 +948,7 @@ exports[`view should be possible to get a view with descriptions 1`] = `
     
                                     </td>
                                     <td class=\\"w3-center\\">
-                                        <div class=\\"w3-dropdown-hover w3-squeed-black\\">
+                                        <div class=\\"w3-dropdown-hover w3-my-black\\">
         <button class=\\"w3-button\\">
             <img
                 src=\\"die1.svg\\"
@@ -1042,7 +1042,7 @@ exports[`view should be possible to get a view with descriptions 1`] = `
     
                                     </td>
                                     <td class=\\"w3-center\\">
-                                        <div class=\\"w3-dropdown-hover w3-squeed-black\\">
+                                        <div class=\\"w3-dropdown-hover w3-my-black\\">
         <button class=\\"w3-button\\">
             <img
                 src=\\"die1.svg\\"
@@ -1136,7 +1136,7 @@ exports[`view should be possible to get a view with descriptions 1`] = `
     
                                     </td>
                                     <td class=\\"w3-center\\">
-                                        <div class=\\"w3-dropdown-hover w3-squeed-black\\">
+                                        <div class=\\"w3-dropdown-hover w3-my-black\\">
         <button class=\\"w3-button\\">
             <img
                 src=\\"die1.svg\\"
@@ -1230,7 +1230,7 @@ exports[`view should be possible to get a view with descriptions 1`] = `
     
                                     </td>
                                     <td class=\\"w3-center\\">
-                                        <div class=\\"w3-dropdown-hover w3-squeed-black\\">
+                                        <div class=\\"w3-dropdown-hover w3-my-black\\">
         <button class=\\"w3-button\\">
             <img
                 src=\\"die1.svg\\"
@@ -1324,7 +1324,7 @@ exports[`view should be possible to get a view with descriptions 1`] = `
     
                                     </td>
                                     <td class=\\"w3-center\\">
-                                        <div class=\\"w3-dropdown-hover w3-squeed-black\\">
+                                        <div class=\\"w3-dropdown-hover w3-my-black\\">
         <button class=\\"w3-button\\">
             <img
                 src=\\"die1.svg\\"
@@ -1486,7 +1486,7 @@ exports[`view should be possible to get a view with descriptions 1`] = `
                 based upon how much was delivered in the past. The forecast is built from a large number of
                 samples generated as combinations of velocities from the previous iterations.
             </p>
-            <div class=\\"w3-card w3-squeed-orange w3-text-black w3-round w3-margin w3-padding\\">
+            <div class=\\"w3-card w3-my-orange w3-text-black w3-round w3-margin w3-padding\\">
                 <p>
                     <b>Exercise Introduction</b> -
                     The first table shows the velocity of the teams for the last six iterations

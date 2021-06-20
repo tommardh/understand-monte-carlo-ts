@@ -36,7 +36,7 @@ function generateDieButton(variable: string, value: number, values: number[]) {
 }
 
 export function generateDiceDropdown(variable: string, value: number, values: number[], alignment: string = "left") {
-    return `<div class="w3-dropdown-hover w3-squeed-black">
+    return `<div class="w3-dropdown-hover w3-my-black">
         <button class="w3-button">
             <img
                 src="die${value + 1}.svg"
