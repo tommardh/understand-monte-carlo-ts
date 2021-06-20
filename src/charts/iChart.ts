@@ -1,4 +1,8 @@
-interface IChart {
+import type { IChartData } from './iChartData';
+import type { IChartAxis } from './iChartAxis';
+import type { IBar } from './iBar';
+
+export interface IChart {
     data: IChartData;
     axis?: IChartAxis;
     bar?: IBar;

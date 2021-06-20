@@ -1,3 +1,6 @@
+import type { IChart } from './iChart';
+import type { IColumn } from './iColumn';
+import type { ITheme } from './iTheme';
 export class Axis {
 
   public static generateAxis(width: number, height: number, margin: number, chart: IChart, theme: ITheme) {

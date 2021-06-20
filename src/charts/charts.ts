@@ -1,5 +1,9 @@
 import { Axis } from "./axis";
 
+import type { IChart } from './iChart';
+import type { IColumn } from './iColumn';
+import type { ITheme } from './iTheme';
+
 export function barChart(chart: IChart) {
     const width = 3840;
     const height = 1080;

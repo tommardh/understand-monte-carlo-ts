@@ -1,4 +1,4 @@
-interface IAxis {
+export interface IAxis {
     show?: boolean;
     type?: string;
 }

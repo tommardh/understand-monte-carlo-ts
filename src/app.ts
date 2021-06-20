@@ -3,6 +3,8 @@ import { Model } from "./model.js";
 import { State } from "./state.js";
 import { View } from "./view.js";
 
+import type { IMessage } from './interfaces/iMessage'; 
+
 const data = {
     counter: 0,
     remainingStories: 100,

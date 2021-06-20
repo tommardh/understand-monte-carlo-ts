@@ -1,5 +1,8 @@
 import { State } from "./state";
 
+import type { IProposal } from './interfaces/iProposal';
+import type { IModel } from './interfaces/iModel'
+
 export class Model {
 
     public data: IModel;

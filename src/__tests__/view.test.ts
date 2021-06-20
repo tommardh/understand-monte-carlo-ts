@@ -1,5 +1,7 @@
 import { View } from "./../view";
 
+import type { IModel } from "../interfaces/iModel";
+
 function expectedView(counter: number) {
     return (
         "<h1>Counter Test</h1>\n" +

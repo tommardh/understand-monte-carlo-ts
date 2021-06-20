@@ -1,3 +1,3 @@
-interface IBar {
+export interface IBar {
     padding?: number;
 }

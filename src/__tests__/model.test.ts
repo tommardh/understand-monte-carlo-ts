@@ -1,5 +1,7 @@
 import { Model } from "./../model";
 
+import type { IModel } from "./../interfaces/iModel";
+
 function render(data: IModel) {
     let output = "";
     output += "<h3>Counting Down</h3>";

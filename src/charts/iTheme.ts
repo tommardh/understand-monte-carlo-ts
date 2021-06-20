@@ -1,4 +1,4 @@
-interface ITheme {
+export interface ITheme {
     stroke: string;
     fill: string;
 }

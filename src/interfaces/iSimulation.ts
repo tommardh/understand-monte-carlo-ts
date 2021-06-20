@@ -1,3 +1,3 @@
-interface ISimulation {
+export interface ISimulation {
     data: number[];
 }

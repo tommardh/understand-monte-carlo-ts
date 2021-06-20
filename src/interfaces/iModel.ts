@@ -1,4 +1,4 @@
-interface IModel {
+export interface IModel {
     counter: number;
     remainingStories: number;
     activeField: string;

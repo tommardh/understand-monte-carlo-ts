@@ -1,3 +1,3 @@
-interface IVector {
+export interface IVector {
     [key: number]: number;
 }

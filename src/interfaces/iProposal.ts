@@ -1,4 +1,4 @@
-interface IProposal {
+export interface IProposal {
     counter?: number;
     remainingStories?: number;
     activeField?: string;

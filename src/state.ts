@@ -1,6 +1,8 @@
 import { Action } from "./action";
 import { View } from "./view";
 
+import type { IModel } from './interfaces/iModel';
+
 export class State {
 
     public view: View;

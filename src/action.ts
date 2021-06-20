@@ -1,5 +1,7 @@
 import { Model } from "./model";
 
+import type { IProposal } from './interfaces/iProposal'; 
+
 export class Action {
 
     public model: Model;

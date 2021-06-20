@@ -1,5 +1,7 @@
 import { Axis } from "./../charts/axis";
 
+import type { IChart } from './../charts/iChart';
+
 const barChartData: IChart = {
                                   data: {
                                       type: "bar",

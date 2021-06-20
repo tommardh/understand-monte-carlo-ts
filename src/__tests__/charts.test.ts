@@ -1,5 +1,7 @@
 import { barChart } from "./../charts/charts";
 
+import type { IChart } from './../charts/iChart';
+
 function deepcopy<T>(o: T): T {
   return JSON.parse(JSON.stringify(o));
 }

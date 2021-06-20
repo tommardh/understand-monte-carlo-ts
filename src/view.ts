@@ -1,6 +1,10 @@
 import { barChart } from "./charts/charts";
 import { generateButton, generateDiceDropdown, repeatElements } from "./templateUtils";
 
+import type { IModel } from './interfaces/iModel';
+import type { IVector } from './interfaces/iVector';
+import type { IChart } from './charts/iChart';
+
 export class View {
 
     public display(representation: string) {
