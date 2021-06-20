@@ -39,7 +39,7 @@ define(["require", "exports"], function (require, exports) {
 </button>`;
     }
     function generateDiceDropdown(variable, value, values, alignment = "left") {
-        return `<div class="w3-dropdown-hover w3-squeed-black">
+        return `<div class="w3-dropdown-hover w3-my-black">
         <button class="w3-button">
             <img
                 src="die${value + 1}.svg"

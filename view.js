@@ -38,7 +38,7 @@ define(["require", "exports", "./charts/charts", "./templateUtils"], function (r
             <div class="w3-display-container">
                 <img src="montecarlo.jpg" class="w3-image">
                     <h1
-                        class="w3-display-topleft w3-container w3-text-squeed-orange"
+                        class="w3-display-topleft w3-container w3-text-my-orange"
                         style="text-shadow:1px 1px 0 #000">
                         <b>MONTE CARLO SIMULATION</b>
                     </h1>
@@ -58,7 +58,7 @@ define(["require", "exports", "./charts/charts", "./templateUtils"], function (r
                 based upon how much was delivered in the past. The forecast is built from a large number of
                 samples generated as combinations of velocities from the previous iterations.
             </p>
-            <div class="w3-card w3-squeed-orange w3-text-black w3-round w3-margin w3-padding">
+            <div class="w3-card w3-my-orange w3-text-black w3-round w3-margin w3-padding">
                 <p>
                     <b>Exercise Introduction</b> -
                     The first table shows the velocity of the teams for the last six iterations
@@ -92,7 +92,7 @@ define(["require", "exports", "./charts/charts", "./templateUtils"], function (r
             <p>The table below shows the velocity of the team for the last 6 iterations</p>
             <table class="w3-table w3-centered">
                 <thead>
-                    <tr class="w3-squeed-orange w3-text-squeed-black">
+                    <tr class="w3-my-orange w3-text-my-black">
                         ${data.reduce((accumulator, currentValue, currentIndex) => {
                 return `${accumulator}
                                 <th>
@@ -107,7 +107,7 @@ define(["require", "exports", "./charts/charts", "./templateUtils"], function (r
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="w3-squeed-black">
+                    <tr class="w3-my-black">
                         ${data.reduce((accumulator, currentValue) => {
                 return `${accumulator}\n<td>${currentValue}</td>`;
             }, "")}
@@ -124,19 +124,19 @@ define(["require", "exports", "./charts/charts", "./templateUtils"], function (r
                         type="text"
                         name="stories"
                         value="${remainingStories}"
-                        class="w3-squeed-black w3-border-white w3-center"
+                        class="w3-my-black w3-border-white w3-center"
                         style="display: inline-block"
                         onchange="send({subject: 'stories', action: 'edit', data: this.value})">
                 </p>
                 <p>The table below shows the six volocities building the next sample</p>
                 <table class="w3-table w3-centered">
                     <thead>
-                        <tr class="w3-squeed-orange w3-text-squeed-black w3-center">
+                        <tr class="w3-my-orange w3-text-my-black w3-center">
                             ${templateUtils_1.repeatElements("th", [1, 2, 3, 4, 5, 6], "Iteration ")}
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="w3-squeed-black">
+                        <tr class="w3-my-black">
                             ${data.reduce((accumulator, currentValue, currentIndex) => {
                 return `${accumulator}
                                     <td class="w3-center">
@@ -168,7 +168,7 @@ define(["require", "exports", "./charts/charts", "./templateUtils"], function (r
                 <h2>Simulation Data</h2>
                 <table class="w3-table w3-centered">
                     <thead>
-                        <tr class="w3-squeed-orange w3-text-squeed-black">
+                        <tr class="w3-my-orange w3-text-my-black">
                             <th>Sample</th>
                             ${templateUtils_1.repeatElements("th", data[0], "Iteration ", true)}
                             <th>Average</th>
@@ -182,7 +182,7 @@ define(["require", "exports", "./charts/charts", "./templateUtils"], function (r
                     const average = sum / currentValue.length;
                     const remainingIterations = Math.ceil(remainingItems / average);
                     return `${accumulator}
-                                <tr class="w3-squeed-black">
+                                <tr class="w3-my-black">
                                     <td>${currentIndex + 1}</td>
                                     ${templateUtils_1.repeatElements("td", currentValue)}
                                     <td>${Math.ceil(average * 10) / 10}</td>
@@ -195,7 +195,7 @@ define(["require", "exports", "./charts/charts", "./templateUtils"], function (r
             return output;
         }
         drawFooter() {
-            return `<br /><img src="squeed_4c_neg.gif" width="100">`;
+            return `<br /><img src="logo.gif" width="100">`;
         }
         drawChart(model) {
             const vector = this.calculateVectors(model);
