@@ -2,7 +2,7 @@
 
 Use `npm start` to
 
-- compile changes od typescript files in folder src
+- compile changes of typescript files in folder src
 - view result in folder dist in chrome browser
 
 ## Deployment of new version
