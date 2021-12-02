@@ -132,7 +132,7 @@ define(["require", "exports", "./charts/charts", "./templateUtils"], function (r
                 <table class="w3-table w3-centered">
                     <thead>
                         <tr class="w3-my-orange w3-text-my-black w3-center">
-                            ${templateUtils_1.repeatElements("th", [1, 2, 3, 4, 5, 6], "Iteration ")}
+                            ${(0, templateUtils_1.repeatElements)("th", [1, 2, 3, 4, 5, 6], "Iteration ")}
                         </tr>
                     </thead>
                     <tbody>
@@ -140,7 +140,7 @@ define(["require", "exports", "./charts/charts", "./templateUtils"], function (r
                             ${data.reduce((accumulator, currentValue, currentIndex) => {
                 return `${accumulator}
                                     <td class="w3-center">
-                                        ${templateUtils_1.generateDiceDropdown("field0" + (currentIndex + 1), currentValue, historicalCapacity, currentIndex === data.length - 1 ? "right" : "left")}
+                                        ${(0, templateUtils_1.generateDiceDropdown)("field0" + (currentIndex + 1), currentValue, historicalCapacity, currentIndex === data.length - 1 ? "right" : "left")}
                                     </td>`;
             }, "")}
                         </tr>
@@ -148,13 +148,13 @@ define(["require", "exports", "./charts/charts", "./templateUtils"], function (r
                 </table>
                 <br/>
                 <div class="w3-row">
-                    ${templateUtils_1.generateButton("Add", "add", count)}
+                    ${(0, templateUtils_1.generateButton)("Add", "add", count)}
                     <div class="w3-col" style="width:4%">&nbsp</div>
-                    ${templateUtils_1.generateButton("Roll Dice", "generate", count)}
+                    ${(0, templateUtils_1.generateButton)("Roll Dice", "generate", count)}
                     <div class="w3-col" style="width:4%">&nbsp</div>
-                    ${templateUtils_1.generateButton("Generate & Add 100", "generate100", count)}
+                    ${(0, templateUtils_1.generateButton)("Generate & Add 100", "generate100", count)}
                     <div class="w3-col" style="width:4%">&nbsp</div>
-                    ${templateUtils_1.generateButton("Reset", "reset")}
+                    ${(0, templateUtils_1.generateButton)("Reset", "reset")}
                 </div>`;
         }
         drawData(model) {
@@ -170,7 +170,7 @@ define(["require", "exports", "./charts/charts", "./templateUtils"], function (r
                     <thead>
                         <tr class="w3-my-orange w3-text-my-black">
                             <th>Sample</th>
-                            ${templateUtils_1.repeatElements("th", data[0], "Iteration ", true)}
+                            ${(0, templateUtils_1.repeatElements)("th", data[0], "Iteration ", true)}
                             <th>Average</th>
                             <th>Remaining Iterations</th>
                         </tr>
@@ -184,7 +184,7 @@ define(["require", "exports", "./charts/charts", "./templateUtils"], function (r
                     return `${accumulator}
                                 <tr class="w3-my-black">
                                     <td>${currentIndex + 1}</td>
-                                    ${templateUtils_1.repeatElements("td", currentValue)}
+                                    ${(0, templateUtils_1.repeatElements)("td", currentValue)}
                                     <td>${Math.ceil(average * 10) / 10}</td>
                                     <td>${remainingIterations}</td>
                                 </tr>`;
@@ -200,7 +200,7 @@ define(["require", "exports", "./charts/charts", "./templateUtils"], function (r
         drawChart(model) {
             const vector = this.calculateVectors(model);
             const barChartData = this.generateChartData(vector);
-            return charts_1.barChart(barChartData);
+            return (0, charts_1.barChart)(barChartData);
         }
         calculateVectors(model) {
             const vector = {};
